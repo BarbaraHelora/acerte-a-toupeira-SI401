@@ -31,7 +31,7 @@ Para rodar este projeto em sua máquina local, siga as instruções abaixo:
 
 3. **Execução**:
    - Clone este repositório para o diretório raiz do seu servidor web (ex: `htdocs` ou `www`).
-   - Acesse o sistema através do seu navegador utilizando o endereço local configurado (ex: `http://localhost/projeto-whac-a-mole`).
+   - Acesse o sistema através do seu navegador utilizando o endereço local configurado (`http://localhost/projeto-acerte-a-toupeira`).
    - Na página inicial, realize o cadastro ou login para começar a jogar.
 
 ---
