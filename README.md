@@ -1,6 +1,9 @@
 # Acerte a Toupeira (Whac-a-Mole)
 
-Projeto desenvolvido para a disciplina **SI401 – Desenvolvimento de Sistemas para Internet** da **Faculdade de Tecnologia da Universidade Estadual de Campinas (FT/UNICAMP)**.
+> Projeto desenvolvido para a disciplina **SI401 – Desenvolvimento de Sistemas para Internet** da **Faculdade de Tecnologia da Universidade Estadual de Campinas (FT/UNICAMP)**.
+![Language](https://img.shields.io/badge/language-JavaScript%20%2F%20PHP-blue)
+![Status](https://img.shields.io/badge/status-Em%20desenvolvimento-yellow)
+![University](https://img.shields.io/badge/unicamp-FT-orange)
 
 Este sistema é uma plataforma online que permite aos usuários jogarem partidas de uma versão personalizada do clássico jogo "Acerte a Toupeira", com modalidades "Clássica" e "Explosiva", níveis de dificuldade crescentes e ranking global.
 
