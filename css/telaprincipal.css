@@ -183,7 +183,7 @@ header h1{
 }
 
 #botao-jogar {
-    width: 20vw;
+    width: 15vw;
     height: auto;
     cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
@@ -198,7 +198,7 @@ dialog {
     border-radius: 20px; /*a unidade aqui não está resposiva*/
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 
-    padding: 1.5vw 2.5vw 2.5vw 2.5vw;
+    padding: 3vw 4vw;
     width: 25vw;
     height: 65vh; 
 }
@@ -215,11 +215,14 @@ dialog::backdrop {
     align-items: center;
     justify-content: center;
 
+    position: absolute;
+    top: 1.2vw;
+
     background-color: var(--fresh-butter);
     border: 0.3vw solid var(--moss);
     border-radius: 20px; /*a unidade aqui não está resposiva*/
     
-    padding: 0 1.5vw 0 1.5vw;
+    padding: 1.5vw 2vw;
     width: 25vw;
     height: 65vh;
 }
@@ -238,7 +241,7 @@ dialog::backdrop {
     box-shadow: 0px 4px 4px 0px var(--moss);
 
     padding: 1.5vw;
-    width: 20vw;
+    width: 22vw;
     height: 8vh;
 }
 
@@ -247,7 +250,7 @@ dialog::backdrop {
     font-family: Sunshiney, cursive;
     color: var(--fresh-butter);
     font-weight: 300;
-    font-size: 3.2vw;
+    font-size: 3.5vw;
 }
 
 #botao-voltar{
@@ -256,9 +259,24 @@ dialog::backdrop {
     cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
-.opcoes-config{
+.opcoes-config-cima{
     display: flex;
-    gap: 0.5vw;
+    gap: 1vw;
+    padding-top: 1vw;
+    width: 90%;
+}
+
+.opcoes-linha{
+    width: 90%;
+}
+
+.opcoes-config-baixo{
+    display: flex;
+    gap: 1.5vw;
+    padding-top: 1vw;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .opcoes-linha h1 {
@@ -268,6 +286,24 @@ dialog::backdrop {
     font-weight: 300;
     display: block;
     margin-bottom: 0.5vh;
+    margin-left: 0.5vw;
+}
+
+.opcoes-linha img{
+    width: 13vw;
+    height: auto;
+    cursor: url('../img/Original/Patinha_Click.png'), auto;
+}
+
+.opcoes-linha canvas{
+    position: relative;
+    bottom: 3vw;
+    right: 0.3vw;
+    background-color: var(--moss);
+    border: 0.3vw solid var(--black-bean);
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px 0px #9B8E64;
+
 }
 
 select {
@@ -310,6 +346,8 @@ select:focus {
     background-color: var(--moss);
     border: 0.3vw solid var(--evergreen);
     border-radius: 20px;
+    box-shadow: 0px 4px 4px 0px #A1946A;
+
 
     width: 12vw;
     height: 8vh;
@@ -342,8 +380,11 @@ select:focus {
     cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
-.checkbox:focus{
-    background-color: blue;
+.checkbox:checked{
+    background-image: url("../img/Original/Estrela.png");
+    background-repeat: no-repeat;
+    background-position: right -0.4vw center;
+    background-size: 2vw;
 }
 
 footer{

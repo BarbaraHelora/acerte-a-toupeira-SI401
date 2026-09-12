@@ -64,48 +64,41 @@
                     </a>
                     <h1> Configurações </h1>
                 </div>
-                <div class="opcoes-config">
+                <div class="opcoes-config-cima">
                     <div class="opcoes-linha">
                         <h1>Tabuleiro</h1>
                         <select id="tabuleiro" name="tabuleiro">
-                            <option value="3x3">3x3</option>
-                            <option value="4x4">4x4</option>
-                            <option value="5x5">5x5</option>
-                            <option value="6x6">6x6</option>
-                            <option value="7x7">7x7</option>
-                            <option value="8x8">8x8</option>
+                            <option value="2">2x2</option>
+                            <option value="3">3x3</option>
+                            <option value="4">4x4</option>
+                            <option value="5">5x5</option>
+                            <option value="6">6x6</option>
+                            <option value="7">7x7</option>
+                            <option value="8">8x8</option>
                         </select>
                     </div>
                     <div class="opcoes-linha">
                         <h1>Modalidade</h1>
                         <div class="opcoes-modalidade">
-                            <input type="checkbox" class="checkbox" id="md-classico" value="classico">
+                            <input type="radio" class="checkbox" id="md-classico" name="modalidade" value="classico">
                             <label for="md-classico"> Clássica </label>
-                            <img src="img/Gato_Configurações_teste.png">
+                            <img src="img/Gato_Configurações_RS.png" alt="Gato">
 
-                            <input type="checkbox" class="checkbox" id="md-explosivo" value="explosivo">
+                            <input type="radio" class="checkbox" id="md-explosivo" name="modalidade" value="explosivo">
                             <label for="md-explosivo"> Explosiva </label>
-                            <img src="img/Bomba_RS.png">
+                            <img src="img/Bomba_RS.png" alt="Bomba">
                         </div>
                     </div>
-                </div> 
-
-
-                <div class="opcoes-config">
-                    <div class="grupo-select">
-                        <h1>Tabuleiro</h1>
-                        <select id="tabuleiro" name="tabuleiro">
-                            <option value="3x3">3x3</option>
-                            <option value="4x4">4x4</option>
-                            <option value="5x5">5x5</option>
-                            <option value="6x6">6x6</option>
-                            <option value="7x7">7x7</option>
-                            <option value="8x8">8x8</option>
-                        </select>
+                </div>
+                <div class="opcoes-config-baixo">
+                    <div class="opcoes-linha">
+                        <canvas id="preview" width="190" height="230"></canvas>
+                        <script src="js/preview.js"></script>
                     </div>
-                    <div class="grupo-select">
-                        <h1>Modalidade</h1>
-                        
+                    <div class="opcoes-linha">
+                        <a href="jogo.html"> <!--O id aqui é para o js identificar qual modal vai ser aberto, não tem a ver com o css-->
+                            <img src="img/Botão_Jogar_RS.png">
+                        </a>
                     </div>
                 </div>
             </div>
