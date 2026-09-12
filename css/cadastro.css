@@ -12,15 +12,19 @@ body {
     justify-content: center;
     align-items: center;
     background-image: url(../img/Background2.png);
+    background-size:contain;
 }
 
 .meio {
     position: relative;
     display: flex;
+    margin-top: 5vw;
+
+    width: 60vw;
+    min-height: fit-content;
     flex-direction: column;
     align-items: center;
-    width: 65vw;
-    min-height: fit-content;
+
     background-color: var(--fresh-butter);
     border: 0.3vw solid var(--moss);
     border-radius: 20px;
@@ -29,21 +33,22 @@ body {
 
 .botao-voltar {
     position: absolute;
-    top: 0.5vh;
-    left: 0.1vw;
-
+    top: 5vh;
+    left: 2vw;
+    cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
 .meio img {
-    width: 15vw;
+    width: 5vw;
     height: auto;
 }
 
+
 .topo-cadastro {
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
-    width: 100%;
 }
 
 .topo-cadastro img {
@@ -52,7 +57,7 @@ body {
 }
 
 .topo-cadastro h1 {
-    width: 30vw;
+    width: 26vw;
     color: var(--fresh-butter);
     background-color: var(--evergreen);
     box-shadow: 0 4px 5px var(--evergreen);
@@ -60,7 +65,7 @@ body {
     margin-bottom: 2vw;
     border: 8px solid var(--moss);
     border-radius: 50px;
-    font-size: 4vw;
+    font-size: 3vw;
     font-weight: 300;    
     text-align: center;
 }
@@ -74,7 +79,7 @@ body {
 .base-cadastro {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     column-gap: 4vw;
     width: 100%;
 }
@@ -87,7 +92,7 @@ body {
 }
 
 label {
-    width: 23vw;
+    width: 22vw;
     text-align: left;
     font-size: 2vw;
     color: var(--moss);
@@ -95,7 +100,8 @@ label {
 
 input {
     background-color: white;
-    width: 23vw;
+    width: 20vw;
+    height: 1vh;
     font-size: 2vw;
     margin-bottom: 0.5vw;
     border: 3px solid var(--moss);
@@ -119,6 +125,7 @@ input {
     background-color: var(--moss);
     box-shadow: 0px 4px 4px 0px var(--black-bean);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
 .botao-cadastrar:hover {

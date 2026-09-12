@@ -9,3 +9,7 @@
   --evergreen: #5B501A;
   --linha: #9A8D64;
 }
+
+body{
+  cursor: url('../img/Original/Patinha.png'), auto;
+}

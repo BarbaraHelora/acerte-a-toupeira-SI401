@@ -35,7 +35,6 @@ dialog[open]::backdrop {
 body{
     background-image: url(../img/Background2.png);
     background-size: cover;
-    cursor: url('../img/Patinha.png'), auto;
 }
 
 header{
@@ -93,6 +92,7 @@ header h1{
 #botao-generico{
     width: 15vw;
     height: auto;
+    cursor: url('../img/Original/Patinha_Click.png'), auto;
 
 }
 
@@ -149,13 +149,13 @@ header h1{
 .botao:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 12px var(--black-bean);
-    cursor: url('../img/Patinha_Click.png'), auto;
+    cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
 .botao:active {
     transform: translateY(2px);
     box-shadow: 0px 1px 2px var(--black-bean); 
-    cursor: url('../img/Patinha_Click.png'), auto;
+    cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
 .linha-vertical{
@@ -185,7 +185,7 @@ header h1{
 #botao-jogar {
     width: 20vw;
     height: auto;
-    cursor: url('../img/Patinha_Click.png'), auto;
+    cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
 dialog {
@@ -253,7 +253,7 @@ dialog::backdrop {
 #botao-voltar{
     width: 3.5vw;
     height: auto;
-    cursor: url('../img/Patinha_Click.png'), auto;
+    cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
 .opcoes-config{
@@ -287,18 +287,17 @@ select {
     cursor: pointer;
     
     /* isso é uma setinha de frufu*/
-    background-image: url("../img/setinha.png");
+    background-image: url("../img/Original/setinha.png");
     background-repeat: no-repeat;
     background-position: right 1vw center;
     background-size: 1vw;
-
-    cursor: url('../img/Patinha_Click.png'), auto;
+    cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
 select:focus {
     outline: none;
     border-color: var(--black-bean);
-    cursor: url('../img/Patinha_Click.png'), auto;
+    cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
 .opcoes-modalidade{
@@ -340,8 +339,7 @@ select:focus {
     border-radius: 0.3vw; 
     width: 1.5vw;
     height: 1.5vw;
-
-    cursor: url('../img/Patinha_Click.png'), auto;
+    cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
 .checkbox:focus{
