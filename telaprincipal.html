@@ -2,6 +2,7 @@
 <html lang="pt-br">
     <head>
         <title> Whack a Cato - Menu Principal </title>
+        <link rel="icon" href="img/Gato_Usu_RS.png">
         <link rel="stylesheet" href="css/basico.css">
         <link rel="stylesheet" href="css/telaprincipal.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,19 +50,72 @@
                         modo Explosivo, que traz desafios e elementos extras para testar seus reflexos.
                     </p>
 
-                    <a href="login.html">
+                    <a href="#" id="abrir-modal"> <!--O id aqui é para o js identificar qual modal vai ser aberto, não tem a ver com o css-->
                         <img id="botao-jogar" src="img/Botão_Jogar_RS.png">
                     </a>
                 </div>
             </div>
         </div>
+        <dialog id="modal-config"> <!--O id aqui é para o js identificar qual modal vai ser aberto, não tem a ver com o css-->
+            <div class="caixa-modal">
+                <div class="caixa-config">
+                    <a href="#" id="fechar-modal"> <!--O id aqui é para o js identificar qual modal vai ser aberto, não tem a ver com o css-->
+                        <img id="botao-voltar" src="img/Botão_Voltar_Verde_RS.png">
+                    </a>
+                    <h1> Configurações </h1>
+                </div>
+                <div class="opcoes-config">
+                    <div class="opcoes-linha">
+                        <h1>Tabuleiro</h1>
+                        <select id="tabuleiro" name="tabuleiro">
+                            <option value="3x3">3x3</option>
+                            <option value="4x4">4x4</option>
+                            <option value="5x5">5x5</option>
+                            <option value="6x6">6x6</option>
+                            <option value="7x7">7x7</option>
+                            <option value="8x8">8x8</option>
+                        </select>
+                    </div>
+                    <div class="opcoes-linha">
+                        <h1>Modalidade</h1>
+                        <div class="opcoes-modalidade">
+                            <input type="checkbox" class="checkbox" id="md-classico" value="classico">
+                            <label for="md-classico"> Clássica </label>
+                            <img src="img/Gato_Configurações_teste.png">
+
+                            <input type="checkbox" class="checkbox" id="md-explosivo" value="explosivo">
+                            <label for="md-explosivo"> Explosiva </label>
+                            <img src="img/Bomba_teste.png">
+                        </div>
+                    </div>
+                </div> 
+
+
+                <div class="opcoes-config">
+                    <div class="grupo-select">
+                        <h1>Tabuleiro</h1>
+                        <select id="tabuleiro" name="tabuleiro">
+                            <option value="3x3">3x3</option>
+                            <option value="4x4">4x4</option>
+                            <option value="5x5">5x5</option>
+                            <option value="6x6">6x6</option>
+                            <option value="7x7">7x7</option>
+                            <option value="8x8">8x8</option>
+                        </select>
+                    </div>
+                    <div class="grupo-select">
+                        <h1>Modalidade</h1>
+                        
+                    </div>
+                </div>
+            </div>
+        </dialog>
         <br>
         <br>
         <br>
         <footer>
             <hr>
         </footer>
-
-
+        <script src="js/modais.js"></script>
     </body>
 </html>

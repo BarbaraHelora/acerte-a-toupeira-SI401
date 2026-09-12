@@ -1,3 +1,31 @@
+@keyframes surgirModal {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+dialog[open] {
+    animation: surgirModal 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+dialog[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+}
+
+/*todos os frufrus acima são pra fazer uma animação no modal e no fundo dele*/
+
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +35,7 @@
 body{
     background-image: url(../img/Background2.png);
     background-size: cover;
+    cursor: url('../img/Patinha.png'), auto;
 }
 
 header{
@@ -114,16 +143,19 @@ header h1{
     box-shadow: 0px 4px 4px 0px var(--black-bean);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     
+    
 }
 
 .botao:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 12px var(--black-bean);
+    cursor: url('../img/Patinha_Click.png'), auto;
 }
 
 .botao:active {
     transform: translateY(2px);
     box-shadow: 0px 1px 2px var(--black-bean); 
+    cursor: url('../img/Patinha_Click.png'), auto;
 }
 
 .linha-vertical{
@@ -153,6 +185,167 @@ header h1{
 #botao-jogar {
     width: 20vw;
     height: auto;
+    cursor: url('../img/Patinha_Click.png'), auto;
+}
+
+dialog {
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--toasted-caramel);
+    border: 0.3vw solid var(--black-bean);
+    border-radius: 20px; /*a unidade aqui não está resposiva*/
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+
+    padding: 1.5vw 2.5vw 2.5vw 2.5vw;
+    width: 25vw;
+    height: 65vh; 
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.caixa-modal{
+    margin: 0;
+    display: grid;
+    align-self: center;
+    justify-self: center;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--fresh-butter);
+    border: 0.3vw solid var(--moss);
+    border-radius: 20px; /*a unidade aqui não está resposiva*/
+    
+    padding: 0 1.5vw 0 1.5vw;
+    width: 25vw;
+    height: 65vh;
+}
+
+.caixa-config{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: center;
+    justify-self: center;
+    gap: 1vw;
+
+    background-color: var(--toasted-caramel);
+    border: 0.3vw solid var(--black-bean);
+    border-radius: 20px; /*a unidade aqui não está resposiva*/
+    box-shadow: 0px 4px 4px 0px var(--moss);
+
+    padding: 1.5vw;
+    width: 20vw;
+    height: 8vh;
+}
+
+.caixa-config h1{
+    margin: 0;
+    font-family: Sunshiney, cursive;
+    color: var(--fresh-butter);
+    font-weight: 300;
+    font-size: 3.2vw;
+}
+
+#botao-voltar{
+    width: 3.5vw;
+    height: auto;
+    cursor: url('../img/Patinha_Click.png'), auto;
+}
+
+.opcoes-config{
+    display: flex;
+    gap: 0.5vw;
+}
+
+.opcoes-linha h1 {
+    font-family: Sunshiney, cursive;
+    color: var(--moss);
+    font-size: 2vw;
+    font-weight: 300;
+    display: block;
+    margin-bottom: 0.5vh;
+}
+
+select {
+    appearance: none;         
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    background-color: #ffffff;
+    color: var(--black-bean);
+    font-family: Sunshiney, cursive;
+    font-size: 1.5vw;
+    
+    border: 0.2vw solid var(--moss);
+    border-radius: 2vw; 
+    padding: 0.2vw 2.5vw 0.2vw 1.2vw;
+    width: 12vw;    
+    cursor: pointer;
+    
+    /* isso é uma setinha de frufu*/
+    background-image: url("../img/setinha.png");
+    background-repeat: no-repeat;
+    background-position: right 1vw center;
+    background-size: 1vw;
+
+    cursor: url('../img/Patinha_Click.png'), auto;
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--black-bean);
+    cursor: url('../img/Patinha_Click.png'), auto;
+}
+
+.opcoes-modalidade{
+    display: grid;
+    grid-template-columns: 1vw 6vw 0.5vw;
+    grid-template-rows: 1vw 1vw;
+    gap: 1.5vw;
+
+    align-items: center;
+    background-color: var(--moss);
+    border: 0.3vw solid var(--evergreen);
+    border-radius: 20px;
+
+    width: 12vw;
+    height: 8vh;
+    padding: 1vw;
+}
+
+.opcoes-modalidade label{
+    font-family: Sunshiney, cursive;
+    color: var(--black-bean);
+    font-weight: 300;
+    font-size: 2vw;
+}
+
+.opcoes-modalidade img{
+    width: 2.5vw;
+    height: auto;
+}
+
+.checkbox{
+    appearance: none;         
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-color: #BEAD7E;
+    
+    border: 0.2vw solid var(--evergreen);
+    border-radius: 0.3vw; 
+    width: 1.5vw;
+    height: 1.5vw;
+
+    cursor: url('../img/Patinha_Click.png'), auto;
+}
+
+.checkbox:focus{
+    background-color: blue;
 }
 
 footer{
