@@ -10,7 +10,7 @@ Este sistema é uma plataforma online que permite aos usuários jogarem partidas
 
 ## 👥 Integrantes do Grupo
 * [Bárbara Helóra Nigra Táparo]
-* [Bianka Yukari Oshiro]
+* [Bianca Yukari Oshiro]
 * [Karina Rodrigues Silva]
 * [Luiza Brum Pires de Brito]
 * [Raissa Souza Santos]
