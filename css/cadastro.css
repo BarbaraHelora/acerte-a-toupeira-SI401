@@ -3,6 +3,7 @@
     border: 0;
     padding: 0;
     scrollbar-width: none;
+    font-family: Sunshiney, cursive;
 }
 
 body {
@@ -14,6 +15,7 @@ body {
 }
 
 .meio {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,19 +25,30 @@ body {
     border: 0.3vw solid var(--moss);
     border-radius: 20px;
     padding: 2vw 0.5vw;
-    font-family: Sunshiney, cursive;
 }
 
 .botao-voltar {
+    position: absolute;
+    top: 0.5vh;
+    left: 0.1vw;
 
+}
+
+.meio img {
+    width: 15vw;
+    height: auto;
 }
 
 .topo-cadastro {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1vw;
     width: 100%;
+}
+
+.topo-cadastro img {
+    width: 30vw;
+    height: auto;
 }
 
 .topo-cadastro h1 {
@@ -58,14 +71,20 @@ body {
     align-items: center;
 }
 
+.base-cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 4vw;
+    width: 100%;
+}
+
 .coluna-esquerda,
 .coluna-direita {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-
 
 label {
     width: 23vw;
@@ -77,6 +96,7 @@ label {
 input {
     background-color: white;
     width: 23vw;
+    font-size: 2vw;
     margin-bottom: 0.5vw;
     border: 3px solid var(--moss);
     border-radius: 50px;
@@ -99,11 +119,6 @@ input {
     background-color: var(--moss);
     box-shadow: 0px 4px 4px 0px var(--black-bean);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.botao-cadastrar:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 12px var(--black-bean);
 }
 
 .botao-cadastrar:hover {

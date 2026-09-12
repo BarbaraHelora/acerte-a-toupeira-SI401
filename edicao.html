@@ -1,42 +1,46 @@
 <!DOCTYPE html>
     <html lang="pt">
         <head>
-            <title>Whack a Cato - Cadastro</title>
+            <title>Whack a Cato - Edição</title>
             <link rel="stylesheet" href="css/basico.css">
-            <link rel="stylesheet" href="css/cadastro.css">
+            <link rel="stylesheet" href="css/edicao.css">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta charset="UTF-8">
         </head>
 
         <body>
+            <header>
+                <hr>
+            </header>
+
             <div class="meio">
                 <a class="botao-voltar" href="login.html">
                     <img src="img/Botão_Voltar_Marrom_RS.png" alt="Voltar">
                 </a>
 
-                <div class="topo-cadastro">
+                <div class="topo-edicao">
                     <div class="imagem-gato">
                         <img src="img/Gato_Usu_RS.png" alt="Gato">
                     </div>
 
                     <div class="campos-superiores">
-                        <h1>Cadastro</h1>
+                        <h1>Editar Informações</h1>
 
                         <label>Nome Completo</label>
                         <input type="text">
 
                         <label>Data de Nascimento</label>
-                        <input type="text">
+                        <input type="text" placeholder="00/00/0000">
 
                         <label>CPF</label>
-                        <input type="text">
+                        <input type="text" placeholder="000.000.000-00">
                     </div>
                 </div>
 
-                <div class="base-cadastro">
+                <div class="base-edicao">
                     <div class="coluna-esquerda">
                         <label for="username">Nome de Usuário</label>
-                        <input type="text" id="username">
+                        <input type="text" id="username" placeholder="Usuario123">
 
                         <label for="password">Senha</label>
                         <input type="password" id="password">
@@ -51,8 +55,12 @@
                     </div>
                 </div>
 
-                <a class="botao-cadastrar" href="telaprincipal.html">Cadastrar</a>
+                <a class="botao-editar" href="telaprincipal.html">Editar</a>
             </div>
+
+            <footer>
+                <hr>
+            </footer>
         </body>
 
     </html>
