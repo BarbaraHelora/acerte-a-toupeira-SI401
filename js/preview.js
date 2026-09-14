@@ -2,6 +2,7 @@ const canvas = document.getElementById('preview');
 const ctx = canvas.getContext('2d');
 const selectTabuleiro = document.getElementById('tabuleiro');
 
+
 const imgCaixa = new Image();
 imgCaixa.src = 'img/jogo/Caixa_RS.png';
 

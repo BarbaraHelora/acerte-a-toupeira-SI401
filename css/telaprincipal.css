@@ -301,8 +301,11 @@ dialog::backdrop {
     right: 0.3vw;
     background-color: var(--moss);
     border: 0.3vw solid var(--black-bean);
-    border-radius: 20px;
+    border-radius: 1.5vw;
     box-shadow: 0px 4px 4px 0px #9B8E64;
+    width: 12vw; 
+    aspect-ratio: 190 / 230; 
+    height: auto;
 
 }
 
