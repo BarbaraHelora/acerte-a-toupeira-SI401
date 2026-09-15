@@ -77,13 +77,14 @@ header hr{
 }
 
 dialog {
+    overflow: visible !important;
     margin: auto;
     align-items: center;
     justify-content: center;
 
     background-color: var(--toasted-caramel);
     border: 0.3vw solid var(--black-bean);
-    border-radius: 20px; /*a unidade aqui não está resposiva*/
+    border-radius: 1.5vw;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 
     padding: 3vw 4vw;
@@ -95,24 +96,94 @@ dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.caixa-modal{
+#bandeira{
+    width: 45vw;
+    height: auto;
+    position: absolute;
+    top: -6vw;
+    left: 50%; 
+    transform: translateX(-50%);
+}
+
+.caixa-modal{ /*é a caixa bege*/
     margin: 0;
     display: grid;
     align-self: center;
     justify-self: center;
+
     align-items: center;
     justify-content: center;
 
     position: absolute;
-    top: 1.2vw;
+    top: 3vw;
 
     background-color: var(--fresh-butter);
     border: 0.3vw solid var(--moss);
-    border-radius: 20px; /*a unidade aqui não está resposiva*/
+    box-shadow: 0px 4px 4px 0px #673921;
+    border-radius: 1.5vw;
     
     padding: 1.5vw 2vw;
     width: 25vw;
-    height: 65vh;
+    height: 45vh;
+}
+
+.caixa-modal h1{
+    font-family: Sunshiney, cursive;
+    font-size: 2.5vw;
+    font-weight: 300;
+
+    color: var(--fresh-butter);
+    background-color: var(--evergreen);
+
+    border: 0.3vw solid var(--moss);
+    border-radius: 2vw;
+    box-shadow: 0px 4px 4px 0px #756B2F;
+    margin-bottom: 1.5vw;
+    width: 17vw;
+
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+}
+
+.modal-menu{ /*é a caixinha com as infos + o gato*/
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+    justify-items: center;
+}
+
+.modal-menu img{
+    width: 12vw;
+}
+
+.modal-menu .info{ /*é a caixinha verde com puramente as infos*/
+    background-color: var(--moss);
+    border: 0.3vw solid var(--evergreen);
+    border-radius: 1.5vw;
+    width: 13vw;
+    height: 30vh;
+    box-shadow: 0px 4px 4px 0px #9F9268;
+
+    padding: 0.5vw;
+}
+
+.modal-botoes{ /*caixa invisivel para centralizar os botões*/
+    position: absolute;
+    bottom: 2vh;
+    gap: 1.5vw;
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza perfeitamente os botões */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao{
+    width: 12vw; 
+    height: auto;
+    cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
 footer{
