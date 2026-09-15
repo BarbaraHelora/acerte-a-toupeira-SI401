@@ -2,7 +2,6 @@
     margin: 0;
     border: 0;
     padding: 0;
-    scrollbar-width: none;
     font-family: Sunshiney, cursive;
 }
 
@@ -14,37 +13,63 @@ body {
     margin: 0;
     background-image: url(../img/Background2.png);
     background-size: cover;
+    overflow: hidden;
 }
 
 .meio {
+    position: relative;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 60vw;
-    max-height: fit-content;    
+    max-height: 80vh;
     background-color: var(--fresh-butter);
     border: 0.3vw solid var(--moss);
-    border-radius: 20px; /*a unidade aqui não está resposiva*/
-    padding: 2vw 0.5vw;
+    border-radius: 20px;
+    padding: 4vh 0.5vw;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-.conteudo {
+.meio::-webkit-scrollbar {
+    width: 0.5vw;
+}
+
+.meio::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 1vw;
+}
+
+.meio::-webkit-scrollbar-thumb {
+    background-color: var(--evergreen);
+    border-radius: 20px;
+}
+
+.botao-voltar {
+    position: absolute;
+    top: 5vh;
+    left: 2vw;
+    cursor: url('../img/Original/Patinha_Click.png'), auto;
+}
+
+.meio img {
+    width: 5vw;
+    height: auto;
+}
+
+.topo-cadastro {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
 }
 
-.meio img {
+.topo-cadastro img {
     width: 30vw;
     height: auto;
 }
 
-.login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.login h1 {
+.topo-cadastro h1 {
     width: 26vw;
     background-color: var(--evergreen);
     box-shadow: 0 4px 5px var(--evergreen);
@@ -56,6 +81,27 @@ body {
     font-size: 3vw;
     font-weight: 300;    
     text-align: center;
+}
+
+.campos-superiores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.base-cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    column-gap: 4vw;
+}
+
+.coluna-esquerda,
+.coluna-direita {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 label {
@@ -71,16 +117,15 @@ input {
     margin-bottom: 0.5vw;
     border: 3px solid var(--moss);
     border-radius: 50px;
-    padding: 1.3vw; 
+    padding: 1.3vw;
     background-color: white;
-    font-size: 2vw;    
+    font-size: 2vw;
     outline: none;
 }
 
-.botao-login {
-    width: 10vw;
-    margin-top: 2vh;
-    margin-bottom: 1vh;    
+.botao-cadastrar {
+    width: 15vw;
+    margin-top: 4vh;
     border: 0.4vw solid var(--black-bean);
     border-radius: 50px;
     padding: 0.3vw;    
@@ -95,29 +140,12 @@ input {
     cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
-.botao-login:hover {
+.botao-cadastrar:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 12px var(--black-bean);
 }
 
-.botao-login:active { /* faz diferença? */
+.botao-cadastrar:active { /* faz diferença? */
     transform: translateY(2px);
     box-shadow: 0px 1px 2px var(--black-bean); 
-}
-
-#cadastro {
-    margin-top: 1vw;
-    font-size: 2vw;
-    color: var(--black-bean);
-}
-
-#cadastro a {
-    color: var(--moss);
-    text-decoration: underline;
-    cursor: url('../img/Original/Patinha_Click.png'), auto;
-}
-
-#cadastro a:hover {
-    color: var(--toasted-caramel); 
-    text-decoration: none;
 }

@@ -2,26 +2,27 @@
     margin: 0;
     border: 0;
     padding: 0;
-    scrollbar-width: none;
     font-family: Sunshiney, cursive;
 }
 
 body {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
+    margin: 0;
     background-image: url(../img/Background2.png);
     background-size: cover;
+    overflow: hidden;
 }
 
 header {
     display: flex;
     align-items: flex-end;
     width: 100vw;
-    height: 3vh;
-    padding: 1vw 0 1vw 0;
+    height: 4vh;
     background-color: var(--fresh-butter);
+    padding: 1vh 0;
 }
 
 header hr {
@@ -36,13 +37,29 @@ header hr {
     flex-direction: column;
     align-items: center;
     width: 60vw;
-    min-height: fit-content;
+    max-height: 80vh;
     background-color: var(--fresh-butter);
     margin-top: 5vh;
     margin-bottom: 5vh;
     border: 0.3vw solid var(--moss);
     border-radius: 20px;
-    padding: 2vw 0.5vw;
+    padding: 4vh 0.5vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.meio::-webkit-scrollbar {
+    width: 0.5vw;
+}
+
+.meio::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 1vw; 
+}
+
+.meio::-webkit-scrollbar-thumb {
+    background-color: var(--evergreen);
+    border-radius: 20px;
 }
 
 .botao-voltar {
@@ -50,7 +67,6 @@ header hr {
     top: 5vh;
     left: 2vw;
     cursor: url('../img/Original/Patinha_Click.png'), auto;
-
 }
 
 .meio img {
@@ -62,7 +78,7 @@ header hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
 }
 
 .topo-edicao img {
@@ -72,13 +88,13 @@ header hr {
 
 .topo-edicao h1 {
     width: 26vw;
-    color: var(--fresh-butter);
     background-color: var(--evergreen);
     box-shadow: 0 4px 5px var(--evergreen);
     margin-top: 2vw;
     margin-bottom: 2vw;
     border: 8px solid var(--moss);
     border-radius: 50px;
+    color: var(--fresh-butter);
     font-size: 3vw;
     font-weight: 300;    
     text-align: center;
@@ -94,8 +110,8 @@ header hr {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    column-gap: 4vw;
     width: 100%;
+    column-gap: 3vw;
 }
 
 .coluna-esquerda,
@@ -107,37 +123,36 @@ header hr {
 
 label {
     width: 22vw;
-    text-align: left;
-    font-size: 2vw;
     color: var(--moss);
+    font-size: 2vw;
+    text-align: left;
 }
 
 input {
-    background-color: white;
     width: 20vw;
     height: 1vh;
-    font-size: 2vw;
     margin-bottom: 0.5vw;
     border: 3px solid var(--moss);
     border-radius: 50px;
     padding: 1.3vw;
+    background-color: white;
+    font-size: 2vw;
     outline: none;
 }
 
 .botao-editar {
     width: 15vw;
-    margin-top: 2vw;
-    margin-bottom: 1vw;    
+    margin-top: 4vh;
     border: 0.4vw solid var(--black-bean);
     border-radius: 50px;
-    padding: 0.3vw;    
+    padding: 0.3vw;
+    background-color: var(--moss);
+    box-shadow: 0px 4px 4px 0px var(--black-bean);    
+    color: var(--black-bean);
     font-size: 2vw;
     font-weight: 300;
     text-align: center;
     text-decoration: none;
-    color: var(--black-bean);
-    background-color: var(--moss);
-    box-shadow: 0px 4px 4px 0px var(--black-bean);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
@@ -156,10 +171,9 @@ footer {
     display: flex;
     align-items: flex-start;
     width: 100vw;
-    height: 3vh;
-    padding: 1vw 0 0 0;
+    height: 4vh;
+    padding: 1vh 0;
     background-color: var(--fresh-butter);
-    margin-top: auto;
 }
 
 footer hr {
