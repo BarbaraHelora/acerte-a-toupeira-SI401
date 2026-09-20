@@ -74,7 +74,7 @@ header hr {
     width: 26vw;
     color: var(--fresh-butter);
     background-color: var(--evergreen);
-    box-shadow: 0 4px 5px var(--evergreen);
+    box-shadow: 0 4px 5px var(--fresh-butter-shadow);
     margin-top: 2vw;
     margin-bottom: 2vw;
     border: 8px solid var(--moss);
@@ -137,19 +137,19 @@ input {
     text-decoration: none;
     color: var(--black-bean);
     background-color: var(--moss);
-    box-shadow: 0px 4px 4px 0px var(--black-bean);
+    box-shadow: 0px 4px 4px 0px var(--fresh-butter-shadow);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
 .botao-editar:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 12px var(--black-bean);
+    box-shadow: 0 8px 12px var(--fresh-butter-shadow);
 }
 
 .botao-editar:active { /* faz diferença? */
     transform: translateY(2px);
-    box-shadow: 0px 1px 2px var(--black-bean); 
+    box-shadow: 0px 1px 2px var(--fresh-butter-shadow); 
 }
 
 footer {

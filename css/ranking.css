@@ -1,0 +1,209 @@
+* {
+    * {
+        margin: 0;
+        border: 0;
+        padding: 0;
+    }
+}
+
+body {
+    background-image: url(../img/Background2.png);
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    align-items: flex-end;
+    width: 100vw;
+    height: 3vh;
+    padding: 1vw 0 1vw 0;
+    background-color: var(--fresh-butter);
+}
+
+header hr {
+    width: 100vw;
+    border: none;
+    border-bottom: 0.2vw dashed var(--linha);
+}
+
+.tela-meio {
+    display: absolute;
+    justify-self: center;
+    align-self: center;
+    background-color: var(--fresh-butter);
+    border: 0.4vw solid var(--moss);
+    border-radius: 20px;
+    width: 60vw;
+    height: 64vh;
+    padding: 2vw;
+    gap: 2vw;
+    margin-top: 6.5vh;
+    margin-bottom: 6.5vh;
+}
+
+.tela-header {
+    background-color: var(--toasted-caramel);
+    display: flex;
+    border-radius: 20px;
+    border: 0.4vw solid var(--black-bean);
+    justify-content: center;
+    align-items: center;
+    height: 10vw;
+    box-shadow: 0px 4px 4px 0px var(--fresh-butter-shadow);
+}
+
+.title-ranking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55vw;
+}
+
+.title-ranking h1 {
+    font-family: Sunshiney, cursive;
+    color: var(--fresh-butter);
+    font-size: 6vw;
+    font-weight: 300;
+}
+
+.botao-voltar {
+    width: 2vw;
+}
+
+.botao-voltar a:hover {
+    cursor: url('../img/Original/Patinha_Click.png'), auto;
+}
+
+.estrela img {
+    height: auto;
+    width: 15vw;
+}
+
+.botao-voltar img {
+    width: 6vw;
+    height: auto;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 3px 2px var(--toasted-caramel-shadow));
+}
+
+.titles {
+    display: flex;
+    color: var(--black-bean);
+    font-weight: 300;
+    gap: 2vw;
+    justify-content: right;
+    margin-top: 2vw;
+    margin-bottom: 1vw;
+    margin-right: 5vw;
+    font-size: 1.5vw;
+}
+
+.titles h2 {
+    font-family: Sunshiney, cursive;
+    font-weight: 300;
+}
+
+.cards-ranking {
+    display: flex;
+    gap: 1.5vw;
+    flex-direction: column;
+    max-height: 17vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 0.4vw;
+    align-items: center;
+}
+
+.cards {
+    background-color: var(--linha);
+    border-radius: 15px;
+    border: 0.4vw solid var(--evergreen);
+    padding: 0.5vw;
+    display: flex;
+    width: 55vw;
+}
+
+.cards .especificacoes {
+    font-size: 4vw;
+    justify-content: right;
+    gap: 3vw;
+    width: 47vw;
+    display: flex;
+    justify-content: right;
+}
+
+.especificacoes .tabuleiro {
+    width: 4vw;
+}
+
+.especificacoes .modalidade {
+    width: 8vw;
+}
+
+.especificacoes .pontuacao {
+    width: 6vw;
+}
+
+.especificacoes .nivel {
+    width: 6vw;
+}
+
+.cards .card {
+    display: flex;
+    gap: 1.5vw;
+}
+
+.card h6 {
+    display: inline;
+    font-size: 2vw;
+}
+
+.card .posicao {
+    margin-left: 1vw;
+    font-family: Gorditas, cursive;
+    color: var(--black-bean);
+    font-size: 2.5vw;
+}
+
+.card .usuario {
+    color: var(--evergreen);
+    font-family: Sunshiney, cursive;
+    font-weight: 300;
+    font-size: 2.5vw;
+}
+
+.especificacoes h6 {
+    color: var(--fresh-butter);
+    font-family: Sunshiney, cursive;
+    font-weight: 300;
+    width: 6vw;
+}
+
+footer {
+    display: flex;
+    align-items: flex-start;
+    width: 100vw;
+    height: 3vh;
+    padding: 1vw 0 1vw 0;
+    background-color: var(--fresh-butter);
+}
+
+footer hr {
+    width: 100vw;
+    border: none;
+    border-top: 0.2vw dashed var(--linha);
+}
+
+.cards-ranking::-webkit-scrollbar {
+    width: 0.5vw;
+}
+
+.cards-ranking::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 1vw; 
+}
+
+.cards-ranking::-webkit-scrollbar-thumb {
+    background-color: var(--evergreen);
+    border-radius: 20px;
+}

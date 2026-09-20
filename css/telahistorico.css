@@ -1,7 +1,4 @@
 /*Tela de histórico*/
-.historico-pagina {
-  --sombra-oliva: #756B2F;
-}
 
 .historico-pagina,
 .historico-pagina *,
@@ -83,9 +80,9 @@
   height: 95px;
   padding: 0 26px;
   background: var(--evergreen);
-  border: 3px solid var(--linha);
+  border: 4px solid var(--linha);
   border-radius: 15px;
-  box-shadow: 0 4px 4px var(--sombra-oliva);
+  box-shadow: 0 4px 4px var(--fresh-butter-shadow);
 }
 
 .historico-titulo a {
@@ -94,7 +91,7 @@
 
 .historico-titulo h1 {
   margin: 0;
-  font-size: 3.2rem;
+  font-size: 3.7rem;
   font-weight: 400;
   line-height: 1;
   text-align: center;
@@ -109,8 +106,8 @@
 }
 
 .icone-pata {
-  width: 152px;
-  margin: -38px;
+  width: 140px;
+  margin: -31px;
   height: auto;
   image-rendering: pixelated;
   filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.35));
@@ -123,7 +120,7 @@
   background: var(--moss);
   border: 5px solid #A1946A;
   border-radius: 20px;
-  box-shadow: 0 4px 4px var(--sombra-oliva);
+  box-shadow: 0 4px 4px var(--fresh-butter-shadow);
 }
 
 .historico-dados h2 {
@@ -137,6 +134,10 @@
 
 .historico-dados dl {
   margin: 0;
+}
+
+.historico-titulo a:hover {
+    cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
 .dado-linha {
@@ -162,7 +163,7 @@
   background: var(--toasted-caramel);
   border: 5px solid var(--black-bean);
   border-radius: 20px;
-  box-shadow: 0 4px 4px #9E9167;
+  box-shadow: 0 4px 4px var(--fresh-butter-shadow);
 }
 
 .lista-partidas {
@@ -182,7 +183,7 @@
   background: var(--moss);
   border: 4px solid var(--evergreen);
   border-radius: 16px;
-  box-shadow: 0 4px 4px var(--sombra-oliva);
+  box-shadow: 0 4px 4px var(--toasted-caramel-shadow);
 }  
 
 /*telas estreitas: as colunas passam a ficar empilhadas*/
@@ -214,3 +215,4 @@
     margin: -28px;
   }
 }
+
