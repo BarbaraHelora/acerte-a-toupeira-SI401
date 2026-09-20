@@ -174,7 +174,7 @@
   padding: 0 6px;
   list-style: none;
   overflow-y: auto;
-  scrollbar-width: auto;
+  scrollbar-width: none;
 }
 
 .partida {
