@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-/*detalhes gearis da página*/ 
+/*detalhes gearis da página*/
 .historico-pagina {
   margin: 0;
   min-height: 100vh;
@@ -16,39 +16,39 @@
   background: var(--black-bean);
   font-family: 'Sunshiney', cursive;
   color: var(--fresh-butter);
+  background-image: url(../img/Background2.png);
+  background-size: cover;
 }
- 
+
 /*faixas claras de topo e rodapé, com a linha pontilhada*/
 .faixa {
   position: relative;
   flex: 0 0 56px;
   background: var(--fresh-butter);
 }
- 
+
 .faixa::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  border-top: 2px dashed var(--linha);
+  border-bottom: 0.2vw dashed var(--linha);
 }
- 
+
 .faixa-topo::after {
   bottom: 13px;
 }
- 
+
 .faixa-rodape::after {
   top: 12px;
 }
- 
+
 /*área central com o padrão de patinhas*/
 .area-fundo {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px 16px 46px;
-  background: var(--black-bean) url('../img/Background2.png') center / cover no-repeat;
 }
 
 /*cartão principal do histórico(parte creme)*/
@@ -60,8 +60,8 @@
   max-width: 100%;
   height: auto;
   padding: 40px 36px 40px 46px;
-  background: #EAD3A9;
-  border: 5px solid #A1946A;
+  background: var(--fresh-butter);
+  border: 5px solid var(--moss);
   border-radius: 20px;
 }
 
@@ -137,7 +137,7 @@
 }
 
 .historico-titulo a:hover {
-    cursor: url('../img/Original/Patinha_Click.png'), auto;
+  cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
 .dado-linha {
@@ -184,7 +184,7 @@
   border: 4px solid var(--evergreen);
   border-radius: 16px;
   box-shadow: 0 4px 4px var(--toasted-caramel-shadow);
-}  
+}
 
 /*telas estreitas: as colunas passam a ficar empilhadas*/
 @media (max-width: 960px) {
@@ -215,4 +215,3 @@
     margin: -28px;
   }
 }
-

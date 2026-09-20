@@ -220,7 +220,7 @@ dialog::backdrop {
 
     background-color: var(--fresh-butter);
     border: 0.3vw solid var(--moss);
-    box-shadow: 0px 4px 4px 0px #673921;
+    box-shadow: 0px 4px 4px 0px var(--toasted-caramel-shadow);
     border-radius: 1.5vw;
     
     padding: 1.5vw 2vw;
@@ -239,7 +239,7 @@ dialog::backdrop {
     background-color: var(--toasted-caramel);
     border: 0.3vw solid var(--black-bean);
     border-radius: 1.5vw;
-    box-shadow: 0px 4px 4px 0px var(--moss);
+    box-shadow: 0px 4px 4px 0px var(--fresh-butter-shadow);
 
     padding: 1.5vw;
     width: 22vw;
@@ -303,7 +303,7 @@ dialog::backdrop {
     background-color: var(--moss);
     border: 0.3vw solid var(--black-bean);
     border-radius: 1.5vw;
-    box-shadow: 0px 4px 4px 0px #9B8E64;
+    box-shadow: 0px 4px 4px 0px var(--fresh-butter-shadow);
     width: 12vw; 
     aspect-ratio: 190 / 230; 
     height: auto;
@@ -350,7 +350,7 @@ select:focus {
     background-color: var(--moss);
     border: 0.3vw solid var(--evergreen);
     border-radius: 1.5vw;
-    box-shadow: 0px 4px 4px 0px #A1946A;
+    box-shadow: 0px 4px 4px 0px var(--fresh-butter-shadow);
 
     width: 12vw;
     height: 8vh;
