@@ -1,0 +1,218 @@
+/*Tela de histórico*/
+.historico-pagina {
+  --sombra-oliva: #756B2F;
+}
+
+.historico-pagina,
+.historico-pagina *,
+.historico-pagina *::before,
+.historico-pagina *::after {
+  box-sizing: border-box;
+}
+
+/*detalhes gearis da página*/ 
+.historico-pagina {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--black-bean);
+  font-family: 'Sunshiney', cursive;
+  color: var(--fresh-butter);
+}
+ 
+/*faixas claras de topo e rodapé, com a linha pontilhada*/
+.faixa {
+  position: relative;
+  flex: 0 0 56px;
+  background: var(--fresh-butter);
+}
+ 
+.faixa::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 2px dashed var(--linha);
+}
+ 
+.faixa-topo::after {
+  bottom: 13px;
+}
+ 
+.faixa-rodape::after {
+  top: 12px;
+}
+ 
+/*área central com o padrão de patinhas*/
+.area-fundo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 16px 46px;
+  background: var(--black-bean) url('../img/Background2.png') center / cover no-repeat;
+}
+
+/*cartão principal do histórico(parte creme)*/
+.historico-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 33px;
+  width: 918px;
+  max-width: 100%;
+  height: auto;
+  padding: 40px 36px 40px 46px;
+  background: #EAD3A9;
+  border: 5px solid #A1946A;
+  border-radius: 20px;
+}
+
+/*coluna da esquerda: título + dados*/
+.historico-esquerda {
+  flex: 0 0 455px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.historico-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 95px;
+  padding: 0 26px;
+  background: var(--evergreen);
+  border: 3px solid var(--linha);
+  border-radius: 15px;
+  box-shadow: 0 4px 4px var(--sombra-oliva);
+}
+
+.historico-titulo a {
+  display: flex;
+}
+
+.historico-titulo h1 {
+  margin: 0;
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  color: var(--fresh-butter);
+}
+
+.icone-voltar {
+  width: 54px;
+  height: auto;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.35));
+}
+
+/* Patinha_RS.png tem margem transparente: a imagem é ampliada e a margem negativa
+   mantém o espaço ocupado em 76px, como no protótipo */
+.icone-pata {
+  width: 152px;
+  margin: -38px;
+  height: auto;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.35));
+}
+
+/*dados da partida selecionada*/
+.historico-dados {
+  height: 300px;
+  padding: 22px 41px 0;
+  background: var(--moss);
+  border: 5px solid #A1946A;
+  border-radius: 20px;
+  box-shadow: 0 4px 4px var(--sombra-oliva);
+}
+
+.historico-dados h2 {
+  margin: 0 0 10px;
+  font-size: 2.6rem;
+  font-weight: 400;
+  line-height: 46px;
+  text-align: center;
+  color: var(--fresh-butter);
+}
+
+.historico-dados dl {
+  margin: 0;
+}
+
+.dado-linha {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.75rem;
+  line-height: 38px;
+  color: var(--fresh-butter);
+}
+
+.dado-linha dt,
+.dado-linha dd {
+  margin: 0;
+}
+
+/*coluna da direita: lista de partidas*/
+.historico-direita {
+  flex: 0 0 338px;
+  display: flex;
+  justify-content: center;
+  height: 417px;
+  padding: 23px 0 24px;
+  background: var(--toasted-caramel);
+  border: 5px solid var(--black-bean);
+  border-radius: 20px;
+  box-shadow: 0 4px 4px #9E9167;
+}
+
+.lista-partidas {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  width: 250px;
+  margin: 0;
+  padding: 0 6px;
+  list-style: none;
+  overflow-y: auto;
+  scrollbar-width: auto;
+}
+
+.partida {
+  flex: 0 0 64px;
+  background: var(--moss);
+  border: 4px solid var(--evergreen);
+  border-radius: 16px;
+  box-shadow: 0 4px 4px var(--sombra-oliva);
+}  
+
+/*telas estreitas: as colunas passam a ficar empilhadas*/
+@media (max-width: 960px) {
+  .historico-card {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 24px 16px;
+  }
+
+  .historico-esquerda,
+  .historico-direita {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 455px;
+  }
+
+  .historico-titulo h1 {
+    font-size: 2.4rem;
+  }
+
+  .icone-voltar {
+    width: 44px;
+  }
+
+  .icone-pata {
+    width: 112px;
+    margin: -28px;
+  }
+}
