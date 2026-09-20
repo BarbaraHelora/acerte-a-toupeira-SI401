@@ -17,11 +17,14 @@
         <div class="meio">
             <canvas style="background-color: black;" id="meuCanvas" width="1024" height="512"></canvas>
         </div>
-        <a href="#" id="abrir-modal"> <!--O id aqui é para o js identificar qual modal vai ser aberto, não tem a ver com o css-->
+        <a href="#" id="abrir-modal-ganhar"> <!--O id aqui é para o js identificar qual modal vai ser aberto, não tem a ver com o css-->
+            <img id="botao-generico" src="img/Botão_Genérico_RS.png" alt="botao-jogar">
+        </a>
+        <a href="#" id="abrir-modal-perder"> <!--O id aqui é para o js identificar qual modal vai ser aberto, não tem a ver com o css-->
             <img id="botao-generico" src="img/Botão_Genérico_RS.png" alt="botao-jogar">
         </a>
 
-        <dialog id="modal-config">
+        <dialog id="modal-ganhar">
                 <img id="bandeira" src="img/Bandeira_RS.png" alt="bandeirinha">
                 <div class="caixa-modal">
                     <h1> Resumo </h1>
@@ -51,12 +54,45 @@
                     <a href="telaprincipal.html">
                         <img class="botao" src="img/Botão_Genérico_RS.png" alt="botao-voltar">
                     </a>
+                    <a href="jogo.html">
+                        <img class="botao" src="img/Botão_Genérico_RS.png" alt="botao-prox-nivel">
+                    </a>
+                </div>
+        </dialog>
+        <dialog id="modal-perder">
+                <img id="bandeira" src="img/Bandeira_RS.png" alt="bandeirinha">
+                <div class="caixa-modal">
+                    <h1> Resumo </h1>
+                    <div class="modal-menu">
+                        <img src="img/Gato_Pendurado_RS.png" alt="gato-pendurado">
+                        <div class="info">
+                            <div class="linha">
+                                <span>Pontuação:</span>
+                                <span class="num-estat" id="pontuacao"> 0 </span>
+                            </div>
+                            <div class="linha">
+                                <span>Acertos:</span>
+                                <span class="num-estat" id="acertos"> 0 </span>
+                            </div>
+                            <div class="linha">
+                                <span>Total de Gatos Acertados:</span>
+                                <span class="num-estat" id="gatos-acertados"> 0 </span>
+                            </div>
+                            <div class="meta-linha">
+                                <span>Pontuação Acumulada::</span>
+                                <strong id="pontuacao-acul"> 0 </strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-botoes">
                     <a href="telaprincipal.html">
                         <img class="botao" src="img/Botão_Genérico_RS.png" alt="botao-voltar">
                     </a>
+                    <a href="jogo.html">
+                        <img class="botao" src="img/Botão_Genérico_RS.png" alt="botao-prox-nivel">
+                    </a>
                 </div>
-            
-            
         </dialog>
        
         <br><br><br>

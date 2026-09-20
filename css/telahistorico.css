@@ -120,7 +120,7 @@
   background: var(--moss);
   border: 5px solid #A1946A;
   border-radius: 20px;
-  box-shadow: 0 4px 4px var(--fresh-butter-shadow);
+  box-shadow: 0 4px 4px var(--evergreen);
 }
 
 .historico-dados h2 {
@@ -145,7 +145,7 @@
   justify-content: space-between;
   font-size: 1.75rem;
   line-height: 38px;
-  color: var(--fresh-butter);
+  color: var(--evergreen);
 }
 
 .dado-linha dt,
