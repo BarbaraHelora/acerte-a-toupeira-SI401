@@ -1,4 +1,14 @@
 /*Tela de histórico*/
+.historico-pagina {
+  --reforco: 0.35;
+  --u: min(max(calc(100vw / 1536), calc(var(--reforco) * 1px + (1 - var(--reforco)) * 100vw / 1536)), calc(96vw / 918));
+  --barra-cor: var(--evergreen); 
+  --barra-largura: 8px; /*espessura aproximada da barra fina*/
+}
+
+html {
+  scrollbar-width: none;
+}
 
 .historico-pagina,
 .historico-pagina *,
@@ -7,7 +17,7 @@
   box-sizing: border-box;
 }
 
-/*detalhes gearis da página*/
+/*detalhes gerais da página*/
 .historico-pagina {
   margin: 0;
   min-height: 100vh;
@@ -16,14 +26,12 @@
   background: var(--black-bean);
   font-family: 'Sunshiney', cursive;
   color: var(--fresh-butter);
-  background-image: url(../img/Background2.png);
-  background-size: cover;
 }
 
 /*faixas claras de topo e rodapé, com a linha pontilhada*/
 .faixa {
   position: relative;
-  flex: 0 0 56px;
+  flex: 0 0 calc(56 * var(--u));
   background: var(--fresh-butter);
 }
 
@@ -32,15 +40,15 @@
   position: absolute;
   left: 0;
   right: 0;
-  border-bottom: 0.2vw dashed var(--linha);
+  border-top: calc(2 * var(--u)) dashed var(--linha);
 }
 
 .faixa-topo::after {
-  bottom: 13px;
+  bottom: calc(13 * var(--u));
 }
 
 .faixa-rodape::after {
-  top: 12px;
+  top: calc(12 * var(--u));
 }
 
 /*área central com o padrão de patinhas*/
@@ -49,40 +57,40 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: calc(30 * var(--u)) calc(16 * var(--u)) calc(46 * var(--u));
+  background: var(--black-bean) url('../img/Background2.png') center / cover no-repeat;
 }
 
 /*cartão principal do histórico(parte creme)*/
 .historico-card {
   display: flex;
   align-items: flex-start;
-  gap: 33px;
-  width: 918px;
-  max-width: 100%;
-  height: auto;
-  padding: 40px 36px 40px 46px;
+  gap: calc(33 * var(--u));
+  width: calc(918 * var(--u));
+  padding: calc(40 * var(--u)) calc(36 * var(--u)) calc(40 * var(--u)) calc(46 * var(--u));
   background: var(--fresh-butter);
-  border: 5px solid var(--moss);
-  border-radius: 20px;
+  border: calc(5 * var(--u)) solid var(--moss);
+  border-radius: calc(20 * var(--u));
 }
 
 /*coluna da esquerda: título + dados*/
 .historico-esquerda {
-  flex: 0 0 455px;
+  flex: 0 0 calc(455 * var(--u));
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: calc(22 * var(--u));
 }
 
 .historico-titulo {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 95px;
-  padding: 0 26px;
+  height: calc(95 * var(--u));
+  padding: 0 calc(26 * var(--u));
   background: var(--evergreen);
-  border: 4px solid var(--linha);
-  border-radius: 15px;
-  box-shadow: 0 4px 4px var(--fresh-butter-shadow);
+  border: calc(3 * var(--u)) solid var(--linha);
+  border-radius: calc(15 * var(--u));
+  box-shadow: 0 calc(4 * var(--u)) calc(4 * var(--u)) var(--fresh-butter-shadow);
 }
 
 .historico-titulo a {
@@ -91,7 +99,7 @@
 
 .historico-titulo h1 {
   margin: 0;
-  font-size: 3.7rem;
+  font-size: calc(51 * var(--u));
   font-weight: 400;
   line-height: 1;
   text-align: center;
@@ -99,35 +107,35 @@
 }
 
 .icone-voltar {
-  width: 54px;
+  width: calc(54 * var(--u));
   height: auto;
   image-rendering: pixelated;
-  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 calc(3 * var(--u)) calc(2 * var(--u)) rgba(0, 0, 0, 0.35));
 }
 
 .icone-pata {
-  width: 140px;
-  margin: -31px;
+  width: calc(152 * var(--u));
+  margin: calc(-38 * var(--u));
   height: auto;
   image-rendering: pixelated;
-  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 calc(3 * var(--u)) calc(2 * var(--u)) rgba(0, 0, 0, 0.35));
 }
 
 /*dados da partida selecionada*/
 .historico-dados {
-  height: 300px;
-  padding: 22px 41px 0;
+  height: calc(300 * var(--u));
+  padding: calc(22 * var(--u)) calc(41 * var(--u)) 0;
   background: var(--moss);
-  border: 5px solid #A1946A;
-  border-radius: 20px;
-  box-shadow: 0 4px 4px var(--fresh-butter-shadow);
+  border: calc(5 * var(--u)) solid #A1946A;
+  border-radius: calc(20 * var(--u));
+  box-shadow: 0 calc(4 * var(--u)) calc(4 * var(--u)) var(--fresh-butter-shadow);
 }
 
 .historico-dados h2 {
-  margin: 0 0 10px;
-  font-size: 2.6rem;
+  margin: 0 0 calc(10 * var(--u));
+  font-size: calc(41.6 * var(--u));
   font-weight: 400;
-  line-height: 46px;
+  line-height: calc(46 * var(--u));
   text-align: center;
   color: var(--fresh-butter);
 }
@@ -136,15 +144,11 @@
   margin: 0;
 }
 
-.historico-titulo a:hover {
-  cursor: url('../img/Original/Patinha_Click.png'), auto;
-}
-
 .dado-linha {
   display: flex;
   justify-content: space-between;
-  font-size: 1.75rem;
-  line-height: 38px;
+  font-size: calc(28 * var(--u));
+  line-height: calc(38 * var(--u));
   color: var(--fresh-butter);
 }
 
@@ -155,63 +159,34 @@
 
 /*coluna da direita: lista de partidas*/
 .historico-direita {
-  flex: 0 0 338px;
+  flex: 0 0 calc(338 * var(--u));
   display: flex;
   justify-content: center;
-  height: 417px;
-  padding: 23px 0 24px;
+  height: calc(417 * var(--u));
+  padding: calc(23 * var(--u)) 0 calc(24 * var(--u));
   background: var(--toasted-caramel);
-  border: 5px solid var(--black-bean);
-  border-radius: 20px;
-  box-shadow: 0 4px 4px var(--fresh-butter-shadow);
+  border: calc(5 * var(--u)) solid var(--black-bean);
+  border-radius: calc(20 * var(--u));
+  box-shadow: 0 calc(4 * var(--u)) calc(4 * var(--u)) var(--fresh-butter-shadow);
 }
 
 .lista-partidas {
   display: flex;
   flex-direction: column;
-  gap: 17px;
-  width: 250px;
+  gap: calc(17 * var(--u));
+  width: 100%;
   margin: 0;
-  padding: 0 6px;
+  padding: 0 calc(45 * var(--u) - var(--barra-largura)) 0 calc(45 * var(--u));
   list-style: none;
   overflow-y: auto;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--barra-cor) transparent;
 }
 
 .partida {
-  flex: 0 0 64px;
+  flex: 0 0 calc(64 * var(--u));
   background: var(--moss);
-  border: 4px solid var(--evergreen);
-  border-radius: 16px;
-  box-shadow: 0 4px 4px var(--toasted-caramel-shadow);
-}
-
-/*telas estreitas: as colunas passam a ficar empilhadas*/
-@media (max-width: 960px) {
-  .historico-card {
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    padding: 24px 16px;
-  }
-
-  .historico-esquerda,
-  .historico-direita {
-    flex: 0 0 auto;
-    width: 100%;
-    max-width: 455px;
-  }
-
-  .historico-titulo h1 {
-    font-size: 2.4rem;
-  }
-
-  .icone-voltar {
-    width: 44px;
-  }
-
-  .icone-pata {
-    width: 112px;
-    margin: -28px;
-  }
+  border: calc(4 * var(--u)) solid var(--evergreen);
+  border-radius: calc(16 * var(--u));
+  box-shadow: 0 calc(4 * var(--u)) calc(4 * var(--u)) var(--toasted-caramel-shadow);
 }
