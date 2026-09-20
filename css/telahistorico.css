@@ -108,8 +108,6 @@
   filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.35));
 }
 
-/* Patinha_RS.png tem margem transparente: a imagem é ampliada e a margem negativa
-   mantém o espaço ocupado em 76px, como no protótipo */
 .icone-pata {
   width: 152px;
   margin: -38px;
