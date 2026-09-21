@@ -60,7 +60,7 @@ header h1{
     color: var(--fresh-butter);
     background-color: var(--evergreen);
     border: 0.7vw solid var(--moss);
-    border-radius: 4vw; /*a unidade aqui não está resposiva*/
+    border-radius: 4vw;
     width: 30vw;
     text-align: center;
     justify-self: center;
@@ -117,7 +117,7 @@ header h1{
     text-align: center;
     background-color: var(--toasted-caramel);
     border: 0.4vw solid var(--black-bean);
-    border-radius: 1.5vw; /*a unidade aqui não está resposiva*/
+    border-radius: 1.5vw;
     width: 20vw;
     height: 42vh;
     padding-top: 1vw;
