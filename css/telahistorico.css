@@ -112,6 +112,7 @@ html {
   width: calc(54 * var(--u));
   height: auto;
   image-rendering: pixelated;
+  cursor: url('../img/Original/Patinha_Click.png'), auto;
   filter: drop-shadow(0 calc(3 * var(--u)) calc(2 * var(--u)) rgba(0, 0, 0, 0.35));
 }
 
