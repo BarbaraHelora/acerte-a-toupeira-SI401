@@ -1,7 +1,6 @@
 /*Tela de histórico*/
 .historico-pagina {
-  --reforco: 0.35;
-  --u: min(max(calc(100vw / 1536), calc(var(--reforco) * 1px + (1 - var(--reforco)) * 100vw / 1536)), calc(96vw / 918));
+  --u: calc(1285px / 1536);
   --barra-cor: var(--evergreen); 
   --barra-largura: 8px; /*espessura aproximada da barra fina*/
 }
