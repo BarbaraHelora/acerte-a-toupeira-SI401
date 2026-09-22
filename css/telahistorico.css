@@ -1,7 +1,6 @@
 /*Tela de histórico*/
-.historico-pagina {
-  --reforco: 0.35;
-  --u: min(max(calc(100vw / 1536), calc(var(--reforco) * 1px + (1 - var(--reforco)) * 100vw / 1536)), calc(96vw / 918));
+.historico-pagina {/*criado para arrumar os problemas de desconfiguraçõa das páginas, bem gambiarra, mas tá funcionando*/
+  --u: calc(1285px / 1536);
   --barra-cor: var(--evergreen); 
   --barra-largura: 8px; /*espessura aproximada da barra fina*/
 }
@@ -67,9 +66,12 @@ html {
   align-items: flex-start;
   gap: calc(33 * var(--u));
   width: calc(918 * var(--u));
+  height: calc(559 * var(--u));
+  top: calc(138 * var(--u));
+  left: calc(188 * var(--u));
   padding: calc(40 * var(--u)) calc(36 * var(--u)) calc(40 * var(--u)) calc(46 * var(--u));
   background: var(--fresh-butter);
-  border: calc(5 * var(--u)) solid var(--moss);
+  border-width: calc(5 * var(--u)) solid var(--moss);
   border-radius: calc(20 * var(--u));
 }
 
@@ -123,7 +125,10 @@ html {
 
 /*dados da partida selecionada*/
 .historico-dados {
-  height: calc(300 * var(--u));
+  width: calc(455 * var(--u));
+  height: calc(336 * var(--u));
+  top: calc(300 * var(--u));
+  left: calc(239 * var(--u));
   padding: calc(22 * var(--u)) calc(41 * var(--u)) 0;
   background: var(--moss);
   border: calc(5 * var(--u)) solid #A1946A;
@@ -133,7 +138,7 @@ html {
 
 .historico-dados h2 {
   margin: 0 0 calc(10 * var(--u));
-  font-size: calc(41.6 * var(--u));
+  font-size: calc(43 * var(--u));
   font-weight: 400;
   line-height: calc(46 * var(--u));
   text-align: center;
@@ -147,8 +152,8 @@ html {
 .dado-linha {
   display: flex;
   justify-content: space-between;
-  font-size: calc(28 * var(--u));
-  line-height: calc(38 * var(--u));
+  font-size: calc(30 * var(--u));
+  line-height: calc(40 * var(--u));
   color: var(--fresh-butter);
 }
 
@@ -162,7 +167,10 @@ html {
   flex: 0 0 calc(338 * var(--u));
   display: flex;
   justify-content: center;
-  height: calc(417 * var(--u));
+  width: calc(338 * var(--u));
+  height: calc(470 * var(--u));
+  top: calc(183 * var(--u));
+  left: calc(727 * var(--u));
   padding: calc(23 * var(--u)) 0 calc(24 * var(--u));
   background: var(--toasted-caramel);
   border: calc(5 * var(--u)) solid var(--black-bean);
