@@ -15,7 +15,12 @@
         </header>
         <br><br><br>
         <div class="meio">
-            <canvas style="background-color: black;" id="meuCanvas" width="1024" height="512"></canvas>
+            <div class="placar"> 
+                <p> Tempo Restante do Nivel: <span id="time">0:00</span> </p>
+                <p> Gatos que Pularam: <span id="qtd">0</span> </p>
+                <p> Pontuação: <span id="score">0</span> </p>
+            </div>
+            <canvas id="meuCanvas" width="1024" height="512"></canvas>
         </div>
         <a href="#" id="abrir-modal-ganhar"> <!--O id aqui é para o js identificar qual modal vai ser aberto, não tem a ver com o css-->
             <img id="botao-generico" src="img/Botão_Genérico_RS.png" alt="botao-jogar">
@@ -85,6 +90,8 @@
                         </div>
                     </div>
                 </div>
+
+                
                 <div class="modal-botoes">
                     <a href="telaprincipal.html">
                         <img class="botao" src="img/Botão_Genérico_RS.png" alt="botao-voltar">
@@ -100,5 +107,6 @@
             <hr>
         </footer>
         <script src="js/modais.js"></script>
+        <script src="js/jogo.js"></script>
     </body>
 </html>

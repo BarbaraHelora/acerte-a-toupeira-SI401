@@ -3,6 +3,7 @@
         opacity: 0;
         transform: scale(0.8);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -32,12 +33,12 @@ dialog[open]::backdrop {
     scrollbar-width: none;
 }
 
-body{
+body {
     background-image: url(../img/Background2.png);
     background-size: cover;
 }
 
-header{
+header {
     display: flex;
     align-items: end;
     justify-content: center;
@@ -47,22 +48,22 @@ header{
     background-color: var(--fresh-butter);
 }
 
-header hr{
+header hr {
     position: absolute;
     width: 100vw;
     border: none;
-    border-top: 0.2vw dashed var(--linha);   
+    border-top: 0.2vw dashed var(--linha);
 }
 
-.menu-geral{
+.menu-geral {
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     width: 100vw;
     height: 20vh;
 }
 
-.meio{
+.meio {
     display: flex;
     justify-content: center;
     justify-self: center;
@@ -89,23 +90,24 @@ dialog {
 
     padding: 3vw 4vw;
     width: 25vw;
-    height: 65vh; 
+    height: 65vh;
 }
 
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-#bandeira{
+#bandeira {
     width: 45vw;
     height: auto;
     position: absolute;
     top: -6vw;
-    left: 50%; 
+    left: 50%;
     transform: translateX(-50%);
 }
 
-.caixa-modal{ /*é a caixa bege*/
+.caixa-modal {
+    /*é a caixa bege*/
     margin: 0;
     display: grid;
     align-self: center;
@@ -121,13 +123,13 @@ dialog::backdrop {
     border: 0.3vw solid var(--moss);
     box-shadow: 0px 4px 4px 0px #673921;
     border-radius: 1.5vw;
-    
+
     padding: 1.5vw 2vw;
     width: 25vw;
     height: 45vh;
 }
 
-.caixa-modal h1{
+.caixa-modal h1 {
     font-family: Sunshiney, cursive;
     font-size: 2.5vw;
     font-weight: 300;
@@ -146,18 +148,20 @@ dialog::backdrop {
     align-self: center;
 }
 
-.modal-menu{ /*é a caixinha com as infos + o gato*/
+.modal-menu {
+    /*é a caixinha com as infos + o gato*/
     display: flex;
     gap: 1vw;
     align-items: center;
     justify-items: center;
 }
 
-.modal-menu img{
+.modal-menu img {
     width: 12vw;
 }
 
-.modal-menu .info{ /*é a caixinha verde com puramente as infos*/
+.modal-menu .info {
+    /*é a caixinha verde com puramente as infos*/
     background-color: var(--moss);
     border: 0.3vw solid var(--evergreen);
     border-radius: 1.5vw;
@@ -168,7 +172,8 @@ dialog::backdrop {
     padding: 1vw;
 }
 
-.info .linha, .meta-linha{
+.info .linha,
+.meta-linha {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -179,7 +184,7 @@ dialog::backdrop {
     color: var(--fresh-butter);
 }
 
-.info .meta-linha{
+.info .meta-linha {
     margin-top: 1vw;
     text-align: center;
     align-items: center;
@@ -188,43 +193,94 @@ dialog::backdrop {
     flex-direction: column;
 }
 
-.meta-linha strong{
+.meta-linha strong {
     font-size: 1.8vw;
 }
 
-.info .num-estat, strong{
+.info .num-estat,
+strong {
     font-family: Gorditas, cursive;
     font-size: 1.3vw;
     font-weight: 400;
     color: var(--evergreen);
 }
 
-.modal-botoes{ /*caixa invisivel para centralizar os botões*/
+.modal-botoes {
+    /*caixa invisivel para centralizar os botões*/
     position: absolute;
     bottom: 2vh;
     gap: 1.5vw;
     left: 50%;
-    transform: translateX(-50%); /* Centraliza perfeitamente os botões */
-    
+    transform: translateX(-50%);
+    /* Centraliza perfeitamente os botões */
+
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.botao{
-    width: 12vw; 
+.botao {
+    width: 12vw;
     height: auto;
     cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
-footer{
+.meio {
+    margin: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 65vw;
+    height: 80vh;
+}
+
+canvas {
+    width: 65vw;
+    margin: 0;
+    border-radius: 0.7vw;
+    background-color: #333;
+    /* Força o navegador a manter os pixels nítidos */
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.placar {
+    background-color: var(--moss);
+    border: 0.3vw solid var(--evergreen);
+    border-radius: 1vw;
+    box-shadow: 0px 4px 4px 0px #9F9268;
+    margin: 0;
+    width: 65vw;
+    height: 10vh;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.placar p {
+    font-family: Gorditas, cursive;
+    font-size: 1vw;
+    font-weight: 300;
+    color: var(--fresh-butter);
+}
+
+.placar span {
+    font-family: Gorditas, cursive;
+    font-size: 1.3vw;
+    font-weight: 400;
+    color: var(--evergreen);
+    margin-left: 1vw;
+}
+
+footer {
     display: grid;
     height: 10vh;
     padding: 1vw 0 0 0;
     background-color: var(--fresh-butter);
 }
 
-footer hr{
+footer hr {
     border: none;
-    border-top: 0.2vw dashed var(--linha); 
+    border-top: 0.2vw dashed var(--linha);
 }
