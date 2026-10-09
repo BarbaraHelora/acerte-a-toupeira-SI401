@@ -43,7 +43,7 @@ header {
     align-items: end;
     justify-content: center;
     width: 100vw;
-    height: 4vh;
+    height: 1vh;
     padding: 1vw 0 1vw 0;
     background-color: var(--fresh-butter);
 }
@@ -72,9 +72,8 @@ header hr {
     border: 0.3vw solid var(--moss);
     border-radius: 1.5vw;
     width: 60vw;
-    height: 60vh;
-    padding: 2vw;
-    gap: 2vw;
+    padding: 3vw;
+    gap: 1vw;
 }
 
 dialog {
@@ -238,10 +237,12 @@ canvas {
     width: 65vw;
     margin: 0;
     border-radius: 0.7vw;
+    margin-bottom: 10vw;
     background-color: #333;
     /* Força o navegador a manter os pixels nítidos */
     image-rendering: pixelated;
     image-rendering: crisp-edges;
+    cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
 .placar {
@@ -250,7 +251,7 @@ canvas {
     border-radius: 1vw;
     box-shadow: 0px 4px 4px 0px #9F9268;
     margin: 0;
-    width: 65vw;
+    width: 64.5vw;
     height: 10vh;
     display: flex;
     justify-content:space-evenly;
@@ -271,6 +272,12 @@ canvas {
     font-weight: 400;
     color: var(--evergreen);
     margin-left: 1vw;
+}
+
+.placar img {
+    width: 7vw;
+    height: auto;
+    cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
 footer {
