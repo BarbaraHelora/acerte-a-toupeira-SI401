@@ -177,9 +177,10 @@ header h1{
 
 .conteudo, .conteudo-inferior p{
     font-family: Gorditas, cursive;
-    font-size: 1.15vw;
+    font-size: 1.2vw;
     font-weight: 400;
     color: var(--toasted-caramel);
+    margin-right: 1vw;
 }
 
 #botao-jogar {
