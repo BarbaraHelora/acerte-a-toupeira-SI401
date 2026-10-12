@@ -88,6 +88,7 @@ header h1{
 .menu-centro img{
     height: auto;
     width: 8vw;
+    color: transparent;
 }
 
 #botao-generico{
