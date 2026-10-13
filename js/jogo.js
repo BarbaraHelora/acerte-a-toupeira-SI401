@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // == modulo configs do tabuleiro ==
 
     // configuração da matriz, terão que ser atualizadas com as infos do modal config @raissa
-    const linhas = 4;
-    const colunas = 4;
+    const linhas = 8;
+    const colunas = 8;
 
     // dimensões dos sprite
     const spriteWidth = 128;
@@ -276,48 +276,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // interatividade de clique
     canvas.addEventListener('click', (evento) => {
-        if (!jogoRodando) return;
+    if (!jogoRodando) return;
 
-        const rect = canvas.getBoundingClientRect();
-        const cliqueX = evento.clientX - rect.left;
-        const cliqueY = evento.clientY - rect.top;
+    const rect = canvas.getBoundingClientRect();
+    
+    // 1. Calcula a escala proporcional entre o tamanho REAL do Canvas (1024x512) e o tamanho VISUAL (CSS)
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
 
-        //hitbox do gatinho, feito assim pq o sprite é o gato e a caixa junto 
-        const margemX = 30;
-        const margemTopo = 30;
-        const margemBaixo = 20;
+    // 2. Aplica a escala para ajustar as coordenadas
+    const cliqueX = (evento.clientX - rect.left) * scaleX;
+    const cliqueY = (evento.clientY - rect.top) * scaleY;
 
-        for (let l = linhas - 1; l >= 0; l--) {
-            for (let c = 0; c < colunas; c++) {
-                let caixa = tabuleiro[l][c];
+    // Hitbox do gatinho
+    const margemX = 30;
+    const margemTopo = 30;
+    const margemBaixo = 20;
 
-                if (caixa.temGato) {
+    for (let l = linhas - 1; l >= 0; l--) {
+        for (let c = 0; c < colunas; c++) {
+            let caixa = tabuleiro[l][c];
 
-                    const gatoMinX = caixa.x + margemX;
-                    const gatoMaxX = caixa.x + spriteWidth - margemX;
-                    const gatoMinY = caixa.y + margemTopo;
-                    const gatoMaxY = caixa.y + spriteHeight - margemBaixo;
+            if (caixa.temGato) {
 
-                    // verifica se o clique foi na hitbox do gatinho
-                    if (
-                        cliqueX >= gatoMinX &&
-                        cliqueX <= gatoMaxX &&
-                        cliqueY >= gatoMinY &&
-                        cliqueY <= gatoMaxY
-                    ) {
-                        // Acertou o gato!
-                        acertosNivel++;
-                        pontuacaoNivel += 10;
-                        if (score) score.innerText = pontuacaoNivel;
+                const gatoMinX = caixa.x + margemX;
+                const gatoMaxX = caixa.x + spriteWidth - margemX;
+                const gatoMinY = caixa.y + margemTopo;
+                const gatoMaxY = caixa.y + spriteHeight - margemBaixo;
 
-                        // Esconde o gato imediatamente
-                        caixa.temGato = false;
-                        return; // Encerra para não acertar mais de um elemento no mesmo clique
-                    }
+                // Verifica se o clique foi na hitbox do gatinho
+                if (
+                    cliqueX >= gatoMinX &&
+                    cliqueX <= gatoMaxX &&
+                    cliqueY >= gatoMinY &&
+                    cliqueY <= gatoMaxY
+                ) {
+                    // Acertou o gato!
+                    acertosNivel++;
+                    pontuacaoNivel += 10;
+                    if (score) score.innerText = pontuacaoNivel;
+
+                    // Esconde o gato imediatamente
+                    caixa.temGato = false;
+                    return; // Encerra para não acertar mais de um elemento no mesmo clique
                 }
             }
         }
-    });
+    }
+});
 
     function loop() {
         desenharJogo();
