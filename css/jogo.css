@@ -248,6 +248,7 @@ canvas {
 }
 
 .placar {
+    position: relative;
     background-color: var(--moss);
     border: 0.3vw solid var(--evergreen);
     border-radius: 1vw;
@@ -263,12 +264,13 @@ canvas {
 
 .placar p {
     font-family: Gorditas, cursive;
-    font-size: 1vw;
+    font-size: 1.2vw;
     font-weight: 300;
     color: var(--fresh-butter);
 }
 
 .placar span {
+    position: absolute;
     font-family: Gorditas, cursive;
     font-size: 1.3vw;
     font-weight: 400;
