@@ -96,7 +96,7 @@ dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-#bandeira {
+.bandeira {
     width: 45vw;
     height: auto;
     position: absolute;
