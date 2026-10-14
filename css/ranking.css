@@ -9,6 +9,7 @@
 body {
     background-image: url(../img/Background2.png);
     background-size: cover;
+    overflow: hidden;
 }
 
 header {
