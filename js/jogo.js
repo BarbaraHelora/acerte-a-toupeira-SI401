@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnProxNivel = document.getElementById('btn-prox-nivel');
 
     //referencia do botão no placar de desistir, aciona o modal de perder
-     const btnDesistir = document.getElementById('btn-desistir');
+    const btnDesistir = document.getElementById('btn-desistir');
 
     // variáveis de nivel
     let nivelAtual = 1;
@@ -33,8 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // configurações de tempo e dificuldade
     let tempoNivel = 30; // 30 segundos por nível
     let tempoVisibilidadeGato = 1000; // começa em 1s, meio em duvida se deixar assim ou não @all
+    let tempoVisibilidadeBomba = 1000; // começa em 1s, acho que tá bom assim - Luiza :)
     let temporizadorJogo = null; // responsavel pela parada ao fim de cada 30s
-    let geradorGatos = null; // responsavel por gerar e parar a geração de gatos ao fim do tempo do nivel
+    let gerarObjetos = null; // responsavel por gerar e parar a geração de objetos ao fim do tempo do nivel
     let jogoRodando = false; // parada do jogo como um todo
 
     // == Modulo de Carregamento de Sprites ==
@@ -44,6 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const imgCaixaComGato = new Image();
     imgCaixaComGato.src = 'img/Jogo/Cato_Siames.png';
+
+    const imgCaixaComBomba = new Image();
+    imgCaixaComBomba.src = 'img/Jogo/Caixa_Bomba.png'
 
     // == modulo configs do tabuleiro ==
 
@@ -87,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     coluna: c,
                     x: x,
                     y: y,
-                    temGato: false
+                    tipo: "vazio"
                 };
             }
         }
@@ -100,11 +104,17 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let c = 0; c < colunas; c++) {
                 let caixa = tabuleiro[l][c];
 
-                if (caixa.temGato) {
+                if (caixa.tipo === "gato") {
                     if (imgCaixaComGato.complete) {
                         ctx.drawImage(imgCaixaComGato, caixa.x, caixa.y, spriteWidth, spriteHeight);
                     }
-                } else {
+                }
+                else if (caixa.tipo === "bomba") {
+                    if (imgCaixaComBomba.complete) {
+                        ctx.drawImage(imgCaixaComBomba, caixa.x, caixa.y, spriteWidth, spriteHeight);
+                    }
+                }
+                else {
                     if (imgCaixa.complete) {
                         ctx.drawImage(imgCaixa, caixa.x, caixa.y, spriteWidth, spriteHeight);
                     }
@@ -141,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 1000);
 
-        iniciarGeradorGatos();
+        iniciarGeradorObjetos();
     }
 
     function atualizarFormatacaoTempo() { // função responsavel por ficar atualizando o cronometro do placar
@@ -158,18 +168,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function iniciarGeradorGatos() {
-        geradorGatos = setInterval(() => {
-            if (!jogoRodando) {
-                return;
-            }
+    function iniciarGeradorObjetos() {
+        const modalidade = sessionStorage.getItem("modalidade"); //pega a modalidade do setItem de modais.js
 
+        function geraBomba() {
             let lSorteada = Math.floor(Math.random() * linhas);
             let cSorteada = Math.floor(Math.random() * colunas);
             let caixaAlvo = tabuleiro[lSorteada][cSorteada];
 
-            if (!caixaAlvo.temGato) {
-                caixaAlvo.temGato = true;
+            if (caixaAlvo.tipo === "vazio") {
+                caixaAlvo.tipo = "bomba";
+
+                // bomba some sozinha após o tempo estipulado do nível
+                setTimeout(() => {
+                    if (jogoRodando) {
+                        caixaAlvo.tipo = "vazio";
+                    }
+                }, tempoVisibilidadeBomba);
+            }
+        }
+
+        function geraGato() {
+            let lSorteada = Math.floor(Math.random() * linhas);
+            let cSorteada = Math.floor(Math.random() * colunas);
+            let caixaAlvo = tabuleiro[lSorteada][cSorteada];
+
+            if (caixaAlvo.tipo === "vazio") {
+                caixaAlvo.tipo = "gato";
                 gatosAparecidosNivel++;
 
                 if (qtd) {
@@ -179,14 +204,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 // gato se esconde sozinho após o tempo estipulado do nível
                 setTimeout(() => {
                     if (jogoRodando) {
-                        caixaAlvo.temGato = false;
+                        caixaAlvo.tipo = "vazio";
                     }
                 }, tempoVisibilidadeGato);
             }
-        }, 800); // intervalo entre as tentativas de exibição de novos gatos
+        }
+
+        gerarObjetos = setInterval(() => {
+            if (!jogoRodando) {
+                return;
+            }
+
+            if (modalidade === "explosivo") {
+                geraBomba();
+            }
+
+            geraGato();
+            desenharJogo();
+        }, 800); // intervalo entre as tentativas de exibição dos elementos    
+
     }
 
-    if(btnDesistir){
+    if (btnDesistir) {
         btnDesistir.addEventListener('click', (evento) => {
             evento.preventDefault();
             encerrarNivel();
@@ -199,12 +238,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function encerrarNivel() {
         jogoRodando = false;
         clearInterval(temporizadorJogo);
-        clearInterval(geradorGatos);
+        clearInterval(gerarObjetos);
 
-        // Limpa todos os gatos que ficaram visíveis
+        // Limpa todos os objetos que ficaram visíveis
         for (let l = 0; l < linhas; l++) {
             for (let c = 0; c < colunas; c++) {
-                tabuleiro[l][c].temGato = false;
+                tabuleiro[l][c].tipo = "vazio";
             }
         }
 
@@ -291,27 +330,36 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let c = 0; c < colunas; c++) {
                 let caixa = tabuleiro[l][c];
 
-                if (caixa.temGato) {
+                const objMinX = caixa.x + margemX;
+                const objMaxX = caixa.x + spriteWidth - margemX;
+                const objMinY = caixa.y + margemTopo;
+                const objMaxY = caixa.y + spriteHeight - margemBaixo;
 
-                    const gatoMinX = caixa.x + margemX;
-                    const gatoMaxX = caixa.x + spriteWidth - margemX;
-                    const gatoMinY = caixa.y + margemTopo;
-                    const gatoMaxY = caixa.y + spriteHeight - margemBaixo;
-
-                    // verifica se o clique foi na hitbox do gatinho
-                    if (
-                        cliqueX >= gatoMinX &&
-                        cliqueX <= gatoMaxX &&
-                        cliqueY >= gatoMinY &&
-                        cliqueY <= gatoMaxY
-                    ) {
+                // verifica se o clique foi na hitbox do gatinho
+                if (
+                    cliqueX >= objMinX &&
+                    cliqueX <= objMaxX &&
+                    cliqueY >= objMinY &&
+                    cliqueY <= objMaxY
+                ) {
+                    if (caixa.tipo === "gato") {
                         // Acertou o gato!
                         acertosNivel++;
                         pontuacaoNivel += 10;
                         if (score) score.innerText = pontuacaoNivel;
 
                         // Esconde o gato imediatamente
-                        caixa.temGato = false;
+                        caixa.tipo = "vazio";
+                        return; // Encerra para não acertar mais de um elemento no mesmo clique
+                    }
+
+                    if (caixa.tipo === "bomba") {
+                        // Acertou a bomba :(
+                        pontuacaoNivel -= 5;
+                        if (score) score.innerText = pontuacaoNivel;
+
+                        // Esconde a bomba imediatamente
+                        caixa.tipo = "vazio";
                         return; // Encerra para não acertar mais de um elemento no mesmo clique
                     }
                 }
