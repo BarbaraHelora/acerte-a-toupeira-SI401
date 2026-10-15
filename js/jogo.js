@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             geraGato();
             desenharJogo();
-        }, 800); // intervalo entre as tentativas de exibição dos elementos    
+        }, 3000); // intervalo entre as tentativas de exibição dos elementos    
 
     }
 
@@ -318,10 +318,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!jogoRodando) return;
 
         const rect = canvas.getBoundingClientRect();
-        const cliqueX = evento.clientX - rect.left;
-        const cliqueY = evento.clientY - rect.top;
 
-        //hitbox do gatinho, feito assim pq o sprite é o gato e a caixa junto 
+        // 1. Calcula a escala proporcional entre o tamanho REAL do Canvas (1024x512) e o tamanho VISUAL (CSS)
+        const scaleX = canvas.width / rect.width;
+        const scaleY = canvas.height / rect.height;
+
+        // 2. Aplica a escala para ajustar as coordenadas
+        const cliqueX = (evento.clientX - rect.left) * scaleX;
+        const cliqueY = (evento.clientY - rect.top) * scaleY;
+
+        console.log({ cliqueX, cliqueY });
+
+        // Hitbox do gatinho
         const margemX = 30;
         const margemTopo = 30;
         const margemBaixo = 20;
@@ -330,12 +338,13 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let c = 0; c < colunas; c++) {
                 let caixa = tabuleiro[l][c];
 
+
                 const objMinX = caixa.x + margemX;
                 const objMaxX = caixa.x + spriteWidth - margemX;
                 const objMinY = caixa.y + margemTopo;
                 const objMaxY = caixa.y + spriteHeight - margemBaixo;
 
-                // verifica se o clique foi na hitbox do gatinho
+                // Verifica se o clique foi na hitbox do gatinho
                 if (
                     cliqueX >= objMinX &&
                     cliqueX <= objMaxX &&

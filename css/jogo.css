@@ -238,10 +238,12 @@ canvas {
     margin: 0;
     border-radius: 0.7vw;
     margin-bottom: 10vw;
-    background-color: #333;
+    background-color: var(--fundo);
     /* Força o navegador a manter os pixels nítidos */
     image-rendering: pixelated;
     image-rendering: crisp-edges;
+    background-size: cover;
+    background-image: url('../img/Jogo/Fundo.png');
     cursor: url('../img/Original/Patinha_Click.png'), auto;
 }
 
