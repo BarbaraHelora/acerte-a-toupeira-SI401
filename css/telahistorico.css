@@ -1,12 +1,7 @@
-/*Tela de histórico*/
-.historico-pagina {/*criado para arrumar os problemas de desconfiguraçõa das páginas, bem gambiarra, mas tá funcionando*/
-  --u: calc(1285px / 1536);
-  --barra-cor: var(--evergreen); 
-  --barra-largura: 8px; /*espessura aproximada da barra fina*/
-}
-
-html {
-  scrollbar-width: none;
+/* Tela de histórico*/
+.historico-pagina {
+  --sombra-oliva: #756B2F;        /* cor das sombras internas */
+  --barra-cor: var(--evergreen);  /* cor da barra de rolagem da lista */
 }
 
 .historico-pagina,
@@ -19,7 +14,8 @@ html {
 /*detalhes gerais da página*/
 .historico-pagina {
   margin: 0;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   background: var(--black-bean);
@@ -27,10 +23,12 @@ html {
   color: var(--fresh-butter);
 }
 
-/*faixas claras de topo e rodapé, com a linha pontilhada*/
+/*faixas claras de topo e rodapé, com a linha pontilhada (mesma altura/padding do header e footer do ranking)*/
 .faixa {
   position: relative;
-  flex: 0 0 calc(56 * var(--u));
+  flex: 0 0 auto;
+  height: 3vh;
+  padding: 1vw 0;
   background: var(--fresh-butter);
 }
 
@@ -39,60 +37,57 @@ html {
   position: absolute;
   left: 0;
   right: 0;
-  border-top: calc(2 * var(--u)) dashed var(--linha);
+  border-top: 0.2vw dashed var(--linha);
 }
 
 .faixa-topo::after {
-  bottom: calc(13 * var(--u));
+  bottom: 0;
 }
 
 .faixa-rodape::after {
-  top: calc(12 * var(--u));
+  top: 0;
 }
 
 /*área central com o padrão de patinhas*/
 .area-fundo {
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: calc(30 * var(--u)) calc(16 * var(--u)) calc(46 * var(--u));
   background: var(--black-bean) url('../img/Background2.png') center / cover no-repeat;
 }
 
-/*cartão principal do histórico(parte creme)*/
+/*cartão principal do histórico (parte creme) — mesmas dimensões do .tela-meio do ranking*/
 .historico-card {
   display: flex;
-  align-items: flex-start;
-  gap: calc(33 * var(--u));
-  width: calc(918 * var(--u));
-  height: calc(559 * var(--u));
-  top: calc(138 * var(--u));
-  left: calc(188 * var(--u));
-  padding: calc(40 * var(--u)) calc(36 * var(--u)) calc(40 * var(--u)) calc(46 * var(--u));
+  gap: 2vw;
+  width: 60vw;
+  height: 64vh;
+  margin: 6.5vh auto;
+  padding: 2vw;
   background: var(--fresh-butter);
-  border-width: calc(5 * var(--u)) solid var(--moss);
-  border-radius: calc(20 * var(--u));
+  border: 0.4vw solid var(--moss);
+  border-radius: 20px;
 }
 
-/*coluna da esquerda: título + dados*/
+/*coluna da esquerda: título + dados.
+  Os números em "flex" vêm da largura original de cada coluna (455px e 338px):
+  o navegador reparte o espaço nessa proporção, sem precisar calcular vw.*/
 .historico-esquerda {
-  flex: 0 0 calc(455 * var(--u));
+  flex: 455 1 0;
   display: flex;
   flex-direction: column;
-  gap: calc(22 * var(--u));
+  gap: 1.4vw;
 }
 
 .historico-titulo {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: calc(95 * var(--u));
-  padding: 0 calc(26 * var(--u));
+  flex: 0 0 auto;
+  height: 6.2vw;
+  padding: 0 1.7vw;
   background: var(--evergreen);
-  border: calc(3 * var(--u)) solid var(--linha);
-  border-radius: calc(15 * var(--u));
-  box-shadow: 0 calc(4 * var(--u)) calc(4 * var(--u)) var(--fresh-butter-shadow);
+  border: 0.2vw solid var(--linha);
+  border-radius: 15px;
+  box-shadow: 0 4px 4px var(--sombra-oliva);
 }
 
 .historico-titulo a {
@@ -101,7 +96,7 @@ html {
 
 .historico-titulo h1 {
   margin: 0;
-  font-size: calc(51 * var(--u));
+  font-size: 3.3vw;
   font-weight: 400;
   line-height: 1;
   text-align: center;
@@ -109,39 +104,39 @@ html {
 }
 
 .icone-voltar {
-  width: calc(54 * var(--u));
+  width: 3.5vw;
   height: auto;
   image-rendering: pixelated;
-  cursor: url('../img/Original/Patinha_Click.png'), auto;
-  filter: drop-shadow(0 calc(3 * var(--u)) calc(2 * var(--u)) rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.35));
 }
 
+/* Patinha_RS.png tem margem transparente: a imagem é ampliada e a margem negativa
+   mantém o espaço ocupado perto de 6.2vw, como no protótipo */
 .icone-pata {
-  width: calc(152 * var(--u));
-  margin: calc(-38 * var(--u));
+  width: 9.9vw;
+  margin: -2.47vw;
   height: auto;
   image-rendering: pixelated;
-  filter: drop-shadow(0 calc(3 * var(--u)) calc(2 * var(--u)) rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.35));
 }
 
-/*dados da partida selecionada*/
+/*dados da partida selecionada: flex:1 preenche o resto da altura da coluna
+  (não precisa de uma altura fixa em px nem em --u)*/
 .historico-dados {
-  width: calc(455 * var(--u));
-  height: calc(336 * var(--u));
-  top: calc(300 * var(--u));
-  left: calc(239 * var(--u));
-  padding: calc(22 * var(--u)) calc(41 * var(--u)) 0;
+  flex: 1;
+  min-height: 0;
+  padding: 1.4vw 2.7vw 0;
   background: var(--moss);
-  border: calc(5 * var(--u)) solid #A1946A;
-  border-radius: calc(20 * var(--u));
-  box-shadow: 0 calc(4 * var(--u)) calc(4 * var(--u)) var(--fresh-butter-shadow);
+  border: 0.4vw solid var(--linha);
+  border-radius: 20px;
+  box-shadow: 0 4px 4px var(--sombra-oliva);
 }
 
 .historico-dados h2 {
-  margin: 0 0 calc(10 * var(--u));
-  font-size: calc(43 * var(--u));
+  margin: 0 0 0.5vw;
+  font-size: 2.7vw;
   font-weight: 400;
-  line-height: calc(46 * var(--u));
+  line-height: 2.7vw;
   text-align: center;
   color: var(--fresh-butter);
 }
@@ -153,8 +148,8 @@ html {
 .dado-linha {
   display: flex;
   justify-content: space-between;
-  font-size: calc(30 * var(--u));
-  line-height: calc(40 * var(--u));
+  font-size: 1.8vw;
+  line-height: 2.2vw;
   color: var(--fresh-butter);
 }
 
@@ -163,29 +158,28 @@ html {
   margin: 0;
 }
 
-/*coluna da direita: lista de partidas*/
+/*coluna da direita: lista de partidas.
+  Sem height fixa: por padrão o flex estica esta coluna até a mesma altura
+  da coluna da esquerda (title + dados juntos).*/
 .historico-direita {
-  flex: 0 0 calc(338 * var(--u));
+  flex: 338 1 0;
   display: flex;
   justify-content: center;
-  width: calc(338 * var(--u));
-  height: calc(470 * var(--u));
-  top: calc(183 * var(--u));
-  left: calc(727 * var(--u));
-  padding: calc(23 * var(--u)) 0 calc(24 * var(--u));
+  padding: 1.5vw 0;
   background: var(--toasted-caramel);
-  border: calc(5 * var(--u)) solid var(--black-bean);
-  border-radius: calc(20 * var(--u));
-  box-shadow: 0 calc(4 * var(--u)) calc(4 * var(--u)) var(--fresh-butter-shadow);
+  border: 0.4vw solid var(--black-bean);
+  border-radius: 20px;
+  box-shadow: 0 4px 4px #9E9167;
 }
 
+/*a lista rola com a barra fina e verde, encostada na borda do painel*/
 .lista-partidas {
   display: flex;
   flex-direction: column;
-  gap: calc(17 * var(--u));
+  gap: 1.1vw;
   width: 100%;
   margin: 0;
-  padding: 0 calc(45 * var(--u) - var(--barra-largura)) 0 calc(45 * var(--u));
+  padding: 0 calc(2.9vw - 8px) 0 2.9vw;
   list-style: none;
   overflow-y: auto;
   scrollbar-width: thin;
@@ -193,9 +187,9 @@ html {
 }
 
 .partida {
-  flex: 0 0 calc(64 * var(--u));
+  flex: 0 0 4.17vw;
   background: var(--moss);
-  border: calc(4 * var(--u)) solid var(--evergreen);
-  border-radius: calc(16 * var(--u));
-  box-shadow: 0 calc(4 * var(--u)) calc(4 * var(--u)) var(--toasted-caramel-shadow);
+  border: 0.26vw solid var(--evergreen);
+  border-radius: 16px;
+  box-shadow: 0 4px 4px var(--sombra-oliva);
 }
