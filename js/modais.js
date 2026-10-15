@@ -1,5 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    const botaoIniciar = document.getElementById("btn-iniciar-jogo");
+
+    if (botaoIniciar){
+        botaoIniciar.addEventListener('click', () => {
+            const modalidadeSelecionada = document.querySelector('input[name="modalidade"]:checked');
+            const modalidade = modalidadeSelecionada.value;
+            sessionStorage.setItem("modalidade", modalidade);
+        });
+    }
+
     function configurarModal(idBotaoAbrir, idModal, idBotaoFechar) {
         const botaoAbrir = document.getElementById(idBotaoAbrir);
         const modal = document.getElementById(idModal);
