@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // configurações de tempo e dificuldade
     let tempoNivel = 30; // 30 segundos por nível
-    let tempoVisibilidadeGato = 1000; // começa em 1s, meio em duvida se deixar assim ou não @all
-    let tempoVisibilidadeBomba = 1000; // começa em 1s, acho que tá bom assim - Luiza :)
+    let tempoVisibilidadeGato = 1500; // começa em 1.5s, meio em duvida se deixar assim ou não @all
+    let tempoVisibilidadeBomba = 1500; // começa em 1.5s, acho que tá bom assim - Luiza :)
     let temporizadorJogo = null; // responsavel pela parada ao fim de cada 30s
     let gerarObjetos = null; // responsavel por gerar e parar a geração de objetos ao fim do tempo do nivel
     let jogoRodando = false; // parada do jogo como um todo
@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // == modulo configs do tabuleiro ==
 
     // configuração da matriz, terão que ser atualizadas com as infos do modal config @raissa
-    const linhas = 8;
-    const colunas = 8;
+    const linhas = 4;
+    const colunas = 4;
 
     // dimensões dos sprite
     const spriteWidth = 128;
@@ -98,30 +98,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function desenharJogo() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height); //limpando o canvas anterior 
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        for (let l = 0; l < linhas; l++) {
-            for (let c = 0; c < colunas; c++) {
-                let caixa = tabuleiro[l][c];
+    for (let l = 0; l < linhas; l++) {
+        for (let c = 0; c < colunas; c++) {
+            let caixa = tabuleiro[l][c];
 
-                if (caixa.tipo === "gato") {
-                    if (imgCaixaComGato.complete) {
-                        ctx.drawImage(imgCaixaComGato, caixa.x, caixa.y, spriteWidth, spriteHeight);
-                    }
+            if (caixa.tipo === "gato") {
+                if (imgCaixaComGato.complete) {
+                    ctx.drawImage(imgCaixaComGato, caixa.x, caixa.y, spriteWidth, spriteHeight);
                 }
-                else if (caixa.tipo === "bomba") {
-                    if (imgCaixaComBomba.complete) {
-                        ctx.drawImage(imgCaixaComBomba, caixa.x, caixa.y, spriteWidth, spriteHeight);
-                    }
+            } 
+            else if(caixa.tipo === "bomba") {
+                if (imgCaixaComBomba.complete) {
+                    ctx.drawImage(imgCaixaComBomba, caixa.x, caixa.y, spriteWidth, spriteHeight);
                 }
+            }
                 else {
-                    if (imgCaixa.complete) {
-                        ctx.drawImage(imgCaixa, caixa.x, caixa.y, spriteWidth, spriteHeight);
-                    }
+                if (imgCaixa.complete) {
+                    ctx.drawImage(imgCaixa, caixa.x, caixa.y, spriteWidth, spriteHeight);
                 }
             }
         }
     }
+}
+
 
     function iniciarNivel() {  // inicia um novo nível
         // reseta pontuação e contadores do nivel atual
@@ -269,6 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalPerder.showModal();
             }
         }
+        console.log(`Tempo Visibilidade (Nível ${nivelAtual}): ${tempoVisibilidadeGato} ms`);    
     }
 
     function preencherModalGanhar() {
@@ -319,17 +321,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const rect = canvas.getBoundingClientRect();
 
-        // 1. Calcula a escala proporcional entre o tamanho REAL do Canvas (1024x512) e o tamanho VISUAL (CSS)
+        //Calcula a escala proporcional entre o tamanho real e visual do canvas
         const scaleX = canvas.width / rect.width;
         const scaleY = canvas.height / rect.height;
 
-        // 2. Aplica a escala para ajustar as coordenadas
+        //Aplica a escala para ajustar as coordenadas
         const cliqueX = (evento.clientX - rect.left) * scaleX;
         const cliqueY = (evento.clientY - rect.top) * scaleY;
 
-        console.log({ cliqueX, cliqueY });
-
-        // Hitbox do gatinho
+        //Hitbox do elemento
         const margemX = 30;
         const margemTopo = 30;
         const margemBaixo = 20;
