@@ -46,6 +46,7 @@ header hr {
     padding: 4vh 0.5vw;
     overflow-y: auto;
     overflow-x: hidden;
+    scrollbar-color: var(--evergreen) transparent;
 }
 
 .meio::-webkit-scrollbar {

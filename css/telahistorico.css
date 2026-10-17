@@ -99,7 +99,7 @@ footer hr {
 
 .historico-titulo h1 {
   margin: 0;
-  font-size: 3.3vw;
+  font-size: 4vw;
   font-weight: 400;
   line-height: 1;
   text-align: center;
@@ -107,7 +107,7 @@ footer hr {
 }
 
 .icone-voltar {
-  width: 3.5vw;
+  width: 4vw;
   height: auto;
   image-rendering: pixelated;
   filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.35));
@@ -124,16 +124,15 @@ footer hr {
 .historico-dados {
   flex: 1;
   min-height: 0;
-  padding: 1.4vw 2.7vw 0;
+  padding: 2.3vw 4vw 0;
   background: var(--moss);
-  border: 0.4vw solid var(--linha);
   border-radius: 20px;
   box-shadow: 0 4px 4px var(--sombra-oliva);
 }
 
 .historico-dados h2 {
-  margin: 0 0 0.5vw;
-  font-size: 2.7vw;
+  margin-bottom: 1.5vw;
+  font-size: 3vw;
   font-weight: 400;
   line-height: 2.7vw;
   text-align: center;
@@ -147,9 +146,9 @@ footer hr {
 .dado-linha {
   display: flex;
   justify-content: space-between;
-  font-size: 1.8vw;
-  line-height: 2.2vw;
-  color: var(--fresh-butter);
+  font-size: 2.2vw;
+  line-height: 2.8vw;
+  color: var(--evergreen);
 }
 
 .dado-linha dt,
@@ -178,11 +177,9 @@ footer hr {
   padding: 0 2.9vw;
   list-style: none;
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--barra-cor) transparent;
+  scrollbar-color: var(--evergreen) transparent;
 }
 
-/*barra de rolagem no Chrome/Edge, no mesmo estilo fino e verde do ranking*/
 .lista-partidas::-webkit-scrollbar {
   width: 0.5vw;
 }
@@ -200,7 +197,7 @@ footer hr {
 .partida {
   flex: 0 0 4.17vw;
   background: var(--moss);
-  border: 0.26vw solid var(--evergreen);
+  border: 0.3vw solid var(--evergreen);
   border-radius: 16px;
-  box-shadow: 0 4px 4px var(--sombra-oliva);
+  box-shadow: 0 4px 4px var(--black-bean);
 }
