@@ -1,73 +1,72 @@
 /*Tela de histórico*/
-.historico-pagina {
-  --sombra-oliva: #756B2F;        /* cor das sombras internas */
-  --barra-cor: var(--evergreen);  /* cor da barra de rolagem da lista */
+
+/*cores usadas só nesta página*/
+body {
+  --sombra-oliva: #756B2F;
+  --barra-cor: var(--evergreen);
 }
 
-.historico-pagina,
-.historico-pagina *,
-.historico-pagina *::before,
-.historico-pagina *::after {
-  box-sizing: border-box;
-}
-
-/*detalhes gerais da página*/
-.historico-pagina {
+/*detalhes gerais da página.*/
+body {
   margin: 0;
   height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  background: var(--black-bean);
+  align-items: center;
   font-family: 'Sunshiney', cursive;
   color: var(--fresh-butter);
+  background-image: url(../img/Background2.png);
+  background-size: cover;
 }
 
 /*faixas claras de topo e rodapé, com a linha pontilhada*/
-.faixa {
-  position: relative;
-  flex: 0 0 auto;
+header {
+  display: flex;
+  align-items: flex-end;
+  width: 100vw;
   height: 3vh;
   padding: 1vw 0;
-  background: var(--fresh-butter);
+  background-color: var(--fresh-butter);
 }
 
-.faixa::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
+header hr {
+  width: 100vw;
+  border: none;
+  border-bottom: 0.2vw dashed var(--linha);
+}
+
+footer {
+  display: flex;
+  align-items: flex-start;
+  width: 100vw;
+  height: 3vh;
+  padding: 1vw 0;
+  background-color: var(--fresh-butter);
+}
+
+footer hr {
+  width: 100vw;
+  border: none;
   border-top: 0.2vw dashed var(--linha);
 }
 
-.faixa-topo::after {
-  bottom: 0;
-}
-
-.faixa-rodape::after {
-  top: 0;
-}
-
-/*área central com o padrão de patinhas*/
-.area-fundo {
-  flex: 1;
-  background: var(--black-bean) url('../img/Background2.png') center / cover no-repeat;
-}
-
-/*cartão principal do histórico igual à tela-meio do ranking*/
+/*cartão principal do histórico*/
 .historico-card {
   display: flex;
-  gap: 2vw;
-  width: 60vw;
-  height: 64vh;
-  margin: 6.5vh auto;
-  padding: 2vw;
-  background: var(--fresh-butter);
+  align-self: center;
+  background-color: var(--fresh-butter);
   border: 0.4vw solid var(--moss);
   border-radius: 20px;
+  width: 60vw;
+  height: 64vh;
+  padding: 2vw;
+  gap: 2vw;
+  margin-top: 6.5vh;
+  margin-bottom: 6.5vh;
 }
 
-/*coluna da esquerda com o título e os dados*/
+/*coluna da esquerda: título + dados*/
 .historico-esquerda {
   flex: 455 1 0;
   display: flex;
@@ -152,7 +151,7 @@
   margin: 0;
 }
 
-/*coluna da direita com a lista de partidas*/
+/*coluna da direita ter os dados das partidas*/
 .historico-direita {
   flex: 338 1 0;
   display: flex;
@@ -164,18 +163,32 @@
   box-shadow: 0 4px 4px #9E9167;
 }
 
-/*a lista e a barra de rolagem verde*/
 .lista-partidas {
   display: flex;
   flex-direction: column;
   gap: 1.1vw;
   width: 100%;
   margin: 0;
-  padding: 0 calc(2.9vw - 8px) 0 2.9vw;
+  padding: 0 2.9vw;
   list-style: none;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--barra-cor) transparent;
+}
+
+/*barra de rolagem no Chrome/Edge, no mesmo estilo fino e verde do ranking*/
+.lista-partidas::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
+.lista-partidas::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 1vw;
+}
+
+.lista-partidas::-webkit-scrollbar-thumb {
+  background-color: var(--evergreen);
+  border-radius: 20px;
 }
 
 .partida {
