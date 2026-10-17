@@ -1,4 +1,4 @@
-/* Tela de histórico*/
+/*Tela de histórico*/
 .historico-pagina {
   --sombra-oliva: #756B2F;        /* cor das sombras internas */
   --barra-cor: var(--evergreen);  /* cor da barra de rolagem da lista */
@@ -23,7 +23,7 @@
   color: var(--fresh-butter);
 }
 
-/*faixas claras de topo e rodapé, com a linha pontilhada (mesma altura/padding do header e footer do ranking)*/
+/*faixas claras de topo e rodapé, com a linha pontilhada*/
 .faixa {
   position: relative;
   flex: 0 0 auto;
@@ -54,7 +54,7 @@
   background: var(--black-bean) url('../img/Background2.png') center / cover no-repeat;
 }
 
-/*cartão principal do histórico (parte creme) — mesmas dimensões do .tela-meio do ranking*/
+/*cartão principal do histórico igual à tela-meio do ranking*/
 .historico-card {
   display: flex;
   gap: 2vw;
@@ -67,9 +67,7 @@
   border-radius: 20px;
 }
 
-/*coluna da esquerda: título + dados.
-  Os números em "flex" vêm da largura original de cada coluna (455px e 338px):
-  o navegador reparte o espaço nessa proporção, sem precisar calcular vw.*/
+/*coluna da esquerda com o título e os dados*/
 .historico-esquerda {
   flex: 455 1 0;
   display: flex;
@@ -110,8 +108,6 @@
   filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.35));
 }
 
-/* Patinha_RS.png tem margem transparente: a imagem é ampliada e a margem negativa
-   mantém o espaço ocupado perto de 6.2vw, como no protótipo */
 .icone-pata {
   width: 9.9vw;
   margin: -2.47vw;
@@ -120,8 +116,6 @@
   filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.35));
 }
 
-/*dados da partida selecionada: flex:1 preenche o resto da altura da coluna
-  (não precisa de uma altura fixa em px nem em --u)*/
 .historico-dados {
   flex: 1;
   min-height: 0;
@@ -158,9 +152,7 @@
   margin: 0;
 }
 
-/*coluna da direita: lista de partidas.
-  Sem height fixa: por padrão o flex estica esta coluna até a mesma altura
-  da coluna da esquerda (title + dados juntos).*/
+/*coluna da direita com a lista de partidas*/
 .historico-direita {
   flex: 338 1 0;
   display: flex;
@@ -172,7 +164,7 @@
   box-shadow: 0 4px 4px #9E9167;
 }
 
-/*a lista rola com a barra fina e verde, encostada na borda do painel*/
+/*a lista e a barra de rolagem verde*/
 .lista-partidas {
   display: flex;
   flex-direction: column;
