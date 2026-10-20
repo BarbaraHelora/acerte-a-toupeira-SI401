@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // == modulo configs do tabuleiro ==
 
-    // configuração da matriz, terão que ser atualizadas com as infos do modal config @raissa
-    const linhas = 4;
-    const colunas = 4;
+    // configuração da mattriz do tabuleiro já que o tamanho do tabuleiro é definido na tela de configuração do jogo
+    const linhas = parseInt(sessionStorage.getItem("linhas")) || 4;
+    const colunas = parseInt(sessionStorage.getItem("colunas")) || 4;
 
     // dimensões dos sprite
     const spriteWidth = 128;
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function iniciarGeradorObjetos() {
-        const modalidade = sessionStorage.getItem("modalidade"); //pega a modalidade do setItem de modais.js
+        const modalidade = sessionStorage.getItem("modalidade") || "classico"; //pega a modalidade do setItem de modais.js
 
         function geraBomba() {
             let lSorteada = Math.floor(Math.random() * linhas);

@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
         botaoIniciar.addEventListener('click', () => {
             const modalidadeSelecionada = document.querySelector('input[name="modalidade"]:checked');
             const modalidade = modalidadeSelecionada.value;
+            const tamanho = document.getElementById('tabuleiro').value; // definição do tamanho do tabuleiro de "2" a "8" linhas/colunas
             sessionStorage.setItem("modalidade", modalidade);
+            sessionStorage.setItem("linhas", tamanho);
+            sessionStorage.setItem("colunas", tamanho);
         });
     }
 
