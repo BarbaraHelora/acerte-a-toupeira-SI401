@@ -126,3 +126,33 @@ function validarCPF(cpf) {
 
     return true; // Se passar por tudo, o CPF existe matematicamente
 }
+
+// == Máscaras para CPF e Telefone
+
+// Máscara para o CPF
+const campoCpf = document.getElementById("cpf");
+if(campoCpf) {
+    campoCpf.addEventListener("input", function() {
+        let valor = campoCpf.value.replace(/\D/g, ""); // remoção de caracteres não numéricos
+
+        // aplica formatação 000.000.000-00 
+        valor = valor.replace(/(\d{3})(\d)/, "$1.$2"); 
+        valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+        valor = valor.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+        
+        campoCpf.value = valor; 
+    });
+}
+
+// Máscara para número de Celular
+const campoTelefone = document.getElementById("telefone");
+if (campoTelefone) {
+    campoTelefone.addEventListener("input", function() {
+        let valor = campoTelefone.value.replace(/\D/g, "");  // remoção de caracteres não numéricos
+        
+        valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2"); // insere parênteses em volta dos 2 primeiros dígitos (DDD)
+        valor = valor.replace(/(\d)(\d{4})$/, "$1-$2"); // insere traço antes dos últimos 4 dígitos
+        
+        campoTelefone.value = valor;
+    });
+}
