@@ -33,8 +33,8 @@ header hr {
 
 .meio {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    display: flex;              /* não parece estar fazendo efeito mais o display aqui */
+    flex-direction: column;     /* pq acho que passou tudo pro forms, não sei se é a melhor prática */
     align-items: center;
     width: 60vw;
     max-height: 80vh;
@@ -73,6 +73,13 @@ header hr {
 .meio img {
     width: 5vw;
     height: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .topo-edicao {
@@ -141,8 +148,14 @@ input {
     outline: none;
 }
 
+input[readonly] {
+    background-color: #e8e8e8;
+    cursor: not-allowed;      
+}
+
 .botao-editar {
     width: 15vw;
+    height: auto;
     margin-top: 4vh;
     border: 0.4vw solid var(--black-bean);
     border-radius: 50px;
