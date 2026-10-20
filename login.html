@@ -14,15 +14,15 @@
                 <div class="conteudo">
                     <img src="img/Gato_Usu_RS.png" alt="Gato">
 
-                    <form name="formLogin" action="telaprincipal.html" onsubmit="return validarLogin()" method="GET"> <!-- por enquanto GET para teste -->
+                    <form name="formLogin" action="telaprincipal.html" method="GET"> <!-- por enquanto GET para teste -->
                         <div class="login">
                             <h1>Whack a Cato</h1>
 
                             <label for="usuario">Usuário</label>
-                            <input type="text" id="usuario" name="usuario">
+                            <input type="text" id="usuario" name="usuario" required>
                         
                             <label for="senha"> Senha</label>
-                            <input type="password" id="senha" name="senha">
+                            <input type="password" id="senha" name="senha" required>
 
                             <input type="submit" class="botao-login" value="Login">
                     </form>
