@@ -14,16 +14,18 @@
                 <div class="conteudo">
                     <img src="img/Gato_Usu_RS.png" alt="Gato">
 
-                    <div class="login">
-                        <h1>Whack a Cato</h1>
+                    <form name="formLogin" action="telaprincipal.html" method="GET"> <!-- por enquanto GET para teste -->
+                        <div class="login">
+                            <h1>Whack a Cato</h1>
 
-                        <label>Usuário</label>
-                        <input type="text">
-                       
-                        <label> Senha</label>
-                        <input type="password">
+                            <label for="usuario">Usuário</label>
+                            <input type="text" id="usuario" name="usuario" required>
+                        
+                            <label for="senha"> Senha</label>
+                            <input type="password" id="senha" name="senha" required>
 
-                        <a class="botao-login" href="telaprincipal.html">Login</a>
+                            <input type="submit" class="botao-login" value="Login">
+                    </form>
 
                         <p id="cadastro">
                             Não tem uma conta? <a href="cadastro.html">Cadastre-se!</a>
@@ -31,5 +33,8 @@
                     </div>
                 </div>
             </div>
+
+        <script src="js/validacoes.js"></script>
+
         </body>
     </html>

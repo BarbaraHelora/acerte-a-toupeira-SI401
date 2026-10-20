@@ -15,42 +15,47 @@
                     <img src="img/Botão_Voltar_Marrom_RS.png" alt="Voltar">
                 </a>
 
-                <div class="topo-cadastro">
-                        <img src="img/Gato_Usu_RS.png" alt="Gato">
+                <form name="formsCadastro" action="login.html" onsubmit="return validarCadastro()" method="GET"> <!-- por enquanto GET para teste -->
+                    <div class="topo-cadastro">
+                            <img src="img/Gato_Usu_RS.png" alt="Gato">
 
-                    <div class="campos-superiores">
-                        <h1>Cadastro</h1>
+                            <div class="campos-superiores">
+                            <h1>Cadastro</h1>
 
-                        <label>Nome Completo</label>
-                        <input type="text">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" name="nome" required>
 
-                        <label>Data de Nascimento</label>
-                        <input type="text">
+                            <label for="dataNascimento">Data de Nascimento</label>
+                            <input type="date" id="dataNascimento" name="dataNascimento" required>
 
-                        <label>CPF</label>
-                        <input type="text">
-                    </div>
-                </div>
-
-                <div class="base-cadastro">
-                    <div class="coluna-esquerda">
-                        <label for="username">Nome de Usuário</label>
-                        <input type="text" id="username">
-
-                        <label for="password">Senha</label>
-                        <input type="password" id="password">
+                            <label for="cpf">CPF</label>
+                            <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+                        </div>
                     </div>
 
-                    <div class="coluna-direita">
-                        <label>Telefone</label>
-                        <input type="text">
+                    <div class="base-cadastro">
+                        <div class="coluna-esquerda">
+                            <label for="usuario">Nome de Usuário</label>
+                            <input type="text" id="usuario" name="usuario" required>
 
-                        <label>E-mail</label>
-                        <input type="text">
+                            <label for="password">Senha</label>
+                            <input type="password" id="senha" name="senha" required>
+                        </div>
+
+                        <div class="coluna-direita">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" required>
+
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="usuario@email.com" required>
+                        </div>
                     </div>
-                </div>
 
-                <a class="botao-cadastrar" href="login.html">Cadastrar</a>
+                    <input type="submit" class="botao-cadastrar" value="Cadastrar">               
+                 </form>
             </div>
+
+            <script src="js/validacoes.js"></script>
+
         </body>
     </html>
