@@ -69,6 +69,7 @@ input {
     width: 20vw;
     height: 1vh;
     margin-bottom: 0.5vw;
+    color: var(--black-bean);
     border: 3px solid var(--moss);
     border-radius: 50px;
     padding: 1.3vw; 

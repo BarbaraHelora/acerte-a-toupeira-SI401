@@ -124,11 +124,39 @@ input {
     height: 1vh;
     margin-bottom: 0.5vw;
     border: 3px solid var(--moss);
+    color: var(--black-bean);
     border-radius: 50px;
     padding: 1.3vw;
     background-color: white;
     font-size: 2vw;
     outline: none;
+}
+
+input::placeholder {
+    color: var(--linha);
+}
+
+input[type="date"]:invalid::-webkit-datetime-edit,
+input[type="date"]:invalid::-webkit-datetime-edit-fields-wrapper,
+input[type="date"]:invalid::-webkit-datetime-edit-text,
+input[type="date"]:invalid::-webkit-datetime-edit-month-field,
+input[type="date"]:invalid::-webkit-datetime-edit-day-field,
+input[type="date"]:invalid::-webkit-datetime-edit-year-field {
+    color: var(--linha);
+}
+
+input[type="date"]::-webkit-datetime-edit,
+input[type="date"]::-webkit-datetime-edit-fields-wrapper,
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+    color: var(--black-bean);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(58%) sepia(21%) saturate(541%) hue-rotate(6deg) brightness(93%) contrast(89%);
 }
 
 .botao-cadastrar {

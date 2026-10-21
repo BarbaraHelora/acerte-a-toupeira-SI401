@@ -140,6 +140,7 @@ input {
     width: 20vw;
     height: 1vh;
     margin-bottom: 0.5vw;
+    color: var(--black-bean);
     border: 3px solid var(--moss);
     border-radius: 50px;
     padding: 1.3vw;
@@ -148,8 +149,21 @@ input {
     outline: none;
 }
 
+input::placeholder {
+    color: var(--black-bean);
+}
+
+input[type="date"]:invalid::-webkit-datetime-edit,
+input[type="date"]:invalid::-webkit-datetime-edit-fields-wrapper,
+input[type="date"]:invalid::-webkit-datetime-edit-text,
+input[type="date"]:invalid::-webkit-datetime-edit-month-field,
+input[type="date"]:invalid::-webkit-datetime-edit-day-field,
+input[type="date"]:invalid::-webkit-datetime-edit-year-field {
+    color: var(--linha);
+}
+
 input[readonly] {
-    background-color: #e8e8e8;
+    background-color: #fff0d7;
     cursor: not-allowed;      
 }
 
