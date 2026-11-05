@@ -1,0 +1,28 @@
+Olá, esse é um guia para instalar a base de dados do sistema :)
+
+1. Primeiramente acesse a pasta 'Banco', lá dentro você deverá encontrar um arquivo chamado instalador.php, ele é o responsável por gerar o banco e suas respectivas tabelas. 
+
+2. Ligue o Apache e o MySql do Xampp (importante).
+
+3. Na painel de controle do Xampp, no menu da direita existe uma opção chamada Explorer, clique nela, ela irá abrir o caminho da aplicação do Explorador de Arquivos.
+
+4. Navegue para C:\xampp\htdocs e lá crie uma pasta com o nome whackacato.
+
+5. Copie o arquivo do passo 1 (instalador.php) e cole dentro dessa pasta.
+
+6. No navegador, pesquise -> 'http://localhost/whackacato/instalador.php' (pode copiar tb).
+
+7. O navegador deverá te informar que o banco e as tabelas foram criadas ("Banco de dados criado com sucesso!!Tabelas criadas com sucesso!!)
+
+Tudo pronto!!
+
+Para ter certeza que tudo esta funcionando bem, siga os passos abaixo
+
+1. Acesse no painel do Xampp o MySql e clique em Admin, ele deverá abrir uma aba do navegador contendo o phpmyadmin.
+
+2. Confira no menu da esquerda se a base 'whackacato' existe.
+
+3. Acesse e verifique se as tabelas 'usuário' e 'partida' estão criadas.
+
+
+Se tudo der certo, sua maquina está pronta e já pode rodar o sistema. :)
