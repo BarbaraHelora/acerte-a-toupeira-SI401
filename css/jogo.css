@@ -171,6 +171,15 @@ dialog::backdrop {
     padding: 1vw;
 }
 
+.modal-botoes button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+}
+
 .info .linha,
 .meta-linha {
     display: flex;

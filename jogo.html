@@ -52,9 +52,16 @@
             </div>
         </div>
         <div class="modal-botoes">
-            <a href="telaprincipal.html">
-                <img class="botao" src="img/Botão_Voltar_RS.png" alt="botao-voltar">
-            </a>
+            <form action="salvar.php?acao=salvar" method="POST" style="margin: 0;">
+                <input type="hidden" name="dim_tabuleiro" id="ganhar-input-dimensao" value="">
+                <input type="hidden" name="modalidade" id="ganhar-input-modalidade" value="">
+                <input type="hidden" name="nivel" id="ganhar-input-nivel" value="">
+                <input type="hidden" name="pontuacao" id="ganhar-input-pontuacao" value="">
+
+                <button type="submit" name="destino" value="menu">
+                    <img class="botao" src="img/Botão_Voltar_RS.png" alt="botao-voltar">
+                </button>
+            </form>
             <a href="#" id="btn-prox-nivel">
                 <img class="botao" src="img/Botão_Prox_RS.png" alt="botao-prox-nivel">
             </a>
@@ -86,14 +93,22 @@
                 </div>
             </div>
         </div>
-        <div class="modal-botoes">
-            <a href="telaprincipal.html">
-                <img class="botao" src="img/Botão_Voltar_RS.png" alt="botao-voltar">
-            </a>
-            <a href="jogo.html">
-                <img class="botao" src="img/Botão_Denovo_RS.png" alt="tentar-denovo">
-            </a>
-        </div>
+        <form action="salvar.php?acao=salvar" method="POST">
+            <input type="hidden" name="dim_tabuleiro" id="perder-input-dimensao" value="">
+            <input type="hidden" name="modalidade" id="perder-input-modalidade" value="">
+            <input type="hidden" name="nivel" id="perder-input-nivel" value="">
+            <input type="hidden" name="pontuacao" id="perder-input-pontuacao" value="">
+
+            <div class="modal-botoes">
+                <button type="submit" name="destino" value="menu">
+                    <img class="botao" src="img/Botão_Voltar_RS.png" alt="botao-voltar">
+                </button>
+
+                <button type="submit" name="destino" value="denovo">
+                    <img class="botao" src="img/Botão_Denovo_RS.png" alt="tentar-denovo">
+                </button>
+            </div>
+        </form>
     </dialog>
     <script src="js/jogo.js"></script>
     <script src="js/modais.js"></script>

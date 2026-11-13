@@ -32,11 +32,12 @@ try {
                             modalidade CHAR(15),
                             pontuacao INTEGER,
                             nivel INTEGER,
-                            fk_Usuario_id_usu INTEGER
+                            data DATE,
+                            id_usu INTEGER
                         );
                         
                         ALTER TABLE Partida ADD CONSTRAINT FK_Partida_2
-                            FOREIGN KEY (fk_Usuario_id_usu)
+                            FOREIGN KEY (id_usu)
                             REFERENCES Usuario (id_usu)
                             ON DELETE CASCADE;";
 

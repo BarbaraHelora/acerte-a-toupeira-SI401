@@ -98,30 +98,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function desenharJogo() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    for (let l = 0; l < linhas; l++) {
-        for (let c = 0; c < colunas; c++) {
-            let caixa = tabuleiro[l][c];
+        for (let l = 0; l < linhas; l++) {
+            for (let c = 0; c < colunas; c++) {
+                let caixa = tabuleiro[l][c];
 
-            if (caixa.tipo === "gato") {
-                if (imgCaixaComGato.complete) {
-                    ctx.drawImage(imgCaixaComGato, caixa.x, caixa.y, spriteWidth, spriteHeight);
+                if (caixa.tipo === "gato") {
+                    if (imgCaixaComGato.complete) {
+                        ctx.drawImage(imgCaixaComGato, caixa.x, caixa.y, spriteWidth, spriteHeight);
+                    }
                 }
-            } 
-            else if(caixa.tipo === "bomba") {
-                if (imgCaixaComBomba.complete) {
-                    ctx.drawImage(imgCaixaComBomba, caixa.x, caixa.y, spriteWidth, spriteHeight);
+                else if(caixa.tipo === "bomba") {
+                    if (imgCaixaComBomba.complete) {
+                        ctx.drawImage(imgCaixaComBomba, caixa.x, caixa.y, spriteWidth, spriteHeight);
+                    }
                 }
-            }
                 else {
-                if (imgCaixa.complete) {
-                    ctx.drawImage(imgCaixa, caixa.x, caixa.y, spriteWidth, spriteHeight);
+                    if (imgCaixa.complete) {
+                        ctx.drawImage(imgCaixa, caixa.x, caixa.y, spriteWidth, spriteHeight);
+                    }
                 }
             }
         }
     }
-}
 
 
     function iniciarNivel() {  // inicia um novo nível
@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalPerder.showModal();
             }
         }
-        console.log(`Tempo Visibilidade (Nível ${nivelAtual}): ${tempoVisibilidadeGato} ms`);    
+        console.log(`Tempo Visibilidade (Nível ${nivelAtual}): ${tempoVisibilidadeGato} ms`);
     }
 
     function preencherModalGanhar() {
@@ -285,6 +285,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let metaEstimada = Math.ceil((gatosAparecidosNivel > 0 ? gatosAparecidosNivel : 5) * 0.70) * 10;
         if (elPontProx) { elPontProx.innerText = metaEstimada; }
+
+        document.getElementById('ganhar-input-dimensao').value = `${linhas}x${colunas}`;
+        document.getElementById('ganhar-input-modalidade').value = sessionStorage.getItem("modalidade") || "classico";
+        document.getElementById('ganhar-input-nivel').value = nivelAtual;
+        document.getElementById('ganhar-input-pontuacao').value = pontuacaoAcumulada;
     }
 
     function preencherModalPerder() {
@@ -297,6 +302,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (elAcertos) { elAcertos.innerText = acertosNivel; }
         if (elGatosAcertados) { elGatosAcertados.innerText = totalGatosAcertadosAcumulado + acertosNivel; }
         if (elPontAcul) { elPontAcul.innerText = pontuacaoAcumulada + pontuacaoNivel; }
+
+        document.getElementById('perder-input-dimensao').value =`${linhas}x${colunas}`;
+        document.getElementById('perder-input-modalidade').value = sessionStorage.getItem("modalidade") || "classico";
+        document.getElementById('perder-input-nivel').value = nivelAtual;
+        document.getElementById('perder-input-pontuacao').value = pontuacaoAcumulada + pontuacaoNivel;
     }
 
     if (btnProxNivel) {
