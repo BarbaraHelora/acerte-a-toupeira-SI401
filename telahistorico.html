@@ -28,41 +28,19 @@
             </div>
 
             <div class="historico-dados">
-                <h2>Nome do Usuário</h2>
+                <h2 id="det-usuario">Selecione uma partida</h2>
                 <dl>
-                    <div class="dado-linha">
-                        <dt>Tabuleiro:</dt>
-                        <dd>8x8</dd>
-                    </div>
-                    <div class="dado-linha">
-                        <dt>Modalidade:</dt>
-                        <dd>Explosiva</dd>
-                    </div>
-                    <div class="dado-linha">
-                        <dt>Pontuação:</dt>
-                        <dd>1600</dd>
-                    </div>
-                    <div class="dado-linha">
-                        <dt>Nível atingido:</dt>
-                        <dd>10</dd>
-                    </div>
-                    <div class="dado-linha">
-                        <dt>Data:</dt>
-                        <dd>06/09/2026</dd>
-                    </div>
-                </dl>
+                    <div class="dado-linha"><dt>Tabuleiro:</dt><dd id="det-tabuleiro">-</dd></div>
+                    <div class="dado-linha"><dt>Modalidade:</dt><dd id="det-modalidade">-</dd></div>
+                    <div class="dado-linha"><dt>Pontuação:</dt><dd id="det-pontuacao">-</dd></div>
+                    <div class="dado-linha"><dt>Nível atingido:</dt><dd id="det-nivel">-</dd></div>
+                    <div class="dado-linha"><dt>Data:</dt><dd id="det-data">-</dd></div>
+                </dl>        
             </div>
-
         </div>
 
         <div class="historico-direita">
-            <ul class="lista-partidas">
-                <li class="partida"></li>
-                <li class="partida"></li>
-                <li class="partida"></li>
-                <li class="partida"></li>
-                <li class="partida"></li>
-                <li class="partida"></li>
+            <ul class="lista-partidas" id="lista-partidas">
             </ul>
         </div>
 
@@ -72,5 +50,7 @@
         <hr>
     </footer>
 
+    <script src="js/historico.js"></script>
+    
 </body>
 </html>

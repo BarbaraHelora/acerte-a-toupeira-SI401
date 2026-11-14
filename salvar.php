@@ -40,6 +40,25 @@ try {
         }
     }
 
+    //2. Buscar o histórico do usuário
+    if ($acao == "historico") {
+
+        $stmt = $conn->prepare(
+            "SELECT p.id_partida, p.dim_tabuleiro, p.modalidade, p.pontuacao,
+                    p.nivel, p.data, u.username
+            FROM partida p
+            JOIN usuario u ON u.id_usu = p.id_usu
+            WHERE p.id_usu = :id
+            ORDER BY p.data DESC"
+        );
+        $stmt->execute([':id' => $id_usu]);
+
+        $partidas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($partidas);
+        exit;
+    }
 } catch (PDOException $e) {
     echo "Ocorreu um erro: " . $e->getMessage();
 }

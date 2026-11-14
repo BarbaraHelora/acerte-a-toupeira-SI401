@@ -196,9 +196,19 @@ footer hr {
 }
 
 .partida {
-  flex: 0 0 4.17vw;
-  background: var(--moss);
-  border: 0.3vw solid var(--evergreen);
-  border-radius: 16px;
-  box-shadow: 0 4px 4px var(--black-bean);
+  display: flex;
+  align-items: center;
+  padding: 0 1.5vw;
+  font-size: 1.6vw;
+  color: var(--fresh-butter);
+  transition: transform 0.2s ease;
+}
+
+.partida:hover {
+  transform: translateY(-2px);
+}
+
+.partida.ativa {
+  background: var(--evergreen);
+  border-color: var(--black-bean);
 }
