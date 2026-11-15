@@ -23,7 +23,7 @@ try {
                             email CHAR(50),
                             senha CHAR(50),
                             usuario CHAR(20),
-                            UNIQUE (cpf, email, username)
+                            UNIQUE (cpf, email, usuario)
                         );
 
                         CREATE TABLE IF NOT EXISTS Partida (
