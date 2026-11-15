@@ -11,11 +11,11 @@
 
         <body>
             <div class="meio">
-                <a class="botao-voltar" href="login.html">
+                <a class="botao-voltar" href="login.php">
                     <img src="img/Botão_Voltar_Marrom_RS.png" alt="Voltar">
                 </a>
 
-                <form name="formsCadastro" action="login.html" onsubmit="return validarCadastro()" method="GET"> <!-- por enquanto GET para teste -->
+                <form name="formsCadastro" action="banco/cadastrar.php" onsubmit="return validarCadastro()" method="POST">
                     <div class="topo-cadastro">
                             <img src="img/Gato_Usu_RS.png" alt="Gato">
 

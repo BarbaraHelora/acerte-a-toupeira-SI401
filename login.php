@@ -1,3 +1,5 @@
+<?php include 'banco/logout.php'; ?>
+
 <!DOCTYPE html>
     <html lang="pt">
         <head> 
@@ -14,7 +16,7 @@
                 <div class="conteudo">
                     <img src="img/Gato_Usu_RS.png" alt="Gato">
 
-                    <form name="formLogin" action="telaprincipal.html" method="GET"> <!-- por enquanto GET para teste -->
+                    <form name="formLogin" action="banco/login.php" method="POST">
                         <div class="login">
                             <h1>Whack a Cato</h1>
 
@@ -25,10 +27,11 @@
                             <input type="password" id="senha" name="senha" required>
 
                             <input type="submit" class="botao-login" value="Login">
+                        
+                            <p id="cadastro">
+                                Não tem uma conta? <a href="cadastro.php">Cadastre-se!</a>
+                            </p>
                         </div>
-                        <p id="cadastro">
-                            Não tem uma conta? <a href="cadastro.html">Cadastre-se!</a>
-                        </p>
                     </form>                    
                 </div>
             </div>

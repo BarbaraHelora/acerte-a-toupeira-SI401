@@ -27,7 +27,7 @@ function validarCadastro() {
     // == Verifica se a senha tem pelo menos 6 caracteres, com um número e caractere especial
     let senha = document.getElementById("senha").value;
     if (senha.length < 6) { 
-        alert("Por segurança, a senha deve ter no mínimo 6 caracteres.");   
+        alert("Por segurança, a senha deve conter no mínimo 6 caracteres.");   
         return false;
     }
 
@@ -35,14 +35,14 @@ function validarCadastro() {
     let temEspecial = /[!@#$%^&*(),.?":{}|<>]/.test(senha);
 
     if (!temNumero || !temEspecial) {
-        alert("A senha deve conter pelo menos um número e um caractere especial.");
+        alert("Por segurança, a senha deve conter pelo menos um número e um caractere especial.");
         return false;
     }
 
     // == Verifica se o telefone tem 9 dígitos (celular)
     let telefone = document.getElementById("telefone").value.replace(/\D/g,""); // remove caracteres não numéricos
     if(telefone.length != 11) {
-        alert("Por favor, digite um celular válido com o DDD.");
+        alert("Por favor, digite um número de celular válido com o DDD.");
         return false;
     }
 
@@ -53,7 +53,6 @@ function validarCadastro() {
         return false;
     }
 
-    alert("Cadastro realizado com sucesso!");
     return true;
 }
 
@@ -70,7 +69,7 @@ function validarEdicao() {
 
     if (senha != "") { // caso o usuário quiser mudar de senha, digita na label 
         if (senha.length < 6) { 
-            alert("Por segurança, a nova senha deve ter no mínimo 6 caracteres.");   
+            alert("Por segurança, a senha deve conter no mínimo 6 caracteres.");   
             return false;
         }
 
@@ -78,26 +77,23 @@ function validarEdicao() {
         let temEspecial = /[!@#$%^&*(),.?":{}|<>]/.test(senha);
 
         if (!temNumero || !temEspecial) {
-            alert("Por segurança, a nova senha deve conter pelo menos um número e um caractere especial.");
+            alert("Por segurança, a senha deve conter pelo menos um número e um caractere especial.");
             return false;
         }
     }
 
-    // Ainda não há o back-end para recuperar o banco de dados, mas a ideia é que não possa ficar vazio 
     let telefone = document.getElementById("telefone").value.replace(/\D/g,""); // remove caracteres não numéricos
     if(telefone.length != 11) {
-        alert("Por favor, digite um celular válido com o DDD.");
+        alert("Por favor, digite um número celular válido com o DDD.");
         return false;
     }
 
-    // Ainda não há o back-end para recuperar o banco de dados, mas a ideia é que não possa ficar vazio 
     let email = document.getElementById("email").value;
     if(!email.includes("@")) {
         alert("Por favor, insira um endereço de e-mail válido.");
         return false;
     }
 
-    alert("Perfil atualizado com sucesso!");
     return true;
 }
 
