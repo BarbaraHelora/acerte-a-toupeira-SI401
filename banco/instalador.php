@@ -17,12 +17,12 @@ try {
     $sql = "CREATE TABLE IF NOT EXISTS Usuario (
                             id_usu INTEGER AUTO_INCREMENT PRIMARY KEY,
                             nome CHAR(50),
-                            data_nascimento DATE,
+                            dataNascimento DATE,
                             cpf CHAR(15),
                             telefone CHAR(15),
                             email CHAR(50),
                             senha CHAR(50),
-                            username CHAR(20),
+                            usuario CHAR(20),
                             UNIQUE (cpf, email, username)
                         );
 
