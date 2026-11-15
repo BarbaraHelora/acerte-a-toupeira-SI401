@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function mostrarDetalhes(p) {
-        document.getElementById('det-usuario').innerText = p.username;
+        document.getElementById('det-usuario').innerText = p.usuario;
         document.getElementById('det-tabuleiro').innerText = p.dim_tabuleiro;
         document.getElementById('det-modalidade').innerText = p.modalidade;
         document.getElementById('det-pontuacao').innerText = p.pontuacao;
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('det-data').innerText = formatarData(p.data);
     }
 
-    fetch('salvar.php?acao=historico')
+    fetch('historico.php')
         .then(resp => resp.json())
         .then(partidas => {
             if (partidas.length === 0) {
