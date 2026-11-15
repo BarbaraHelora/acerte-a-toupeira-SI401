@@ -5,10 +5,10 @@
         $nome = htmlspecialchars($_POST['nome']);
         $dataNascimento = htmlspecialchars($_POST['dataNascimento']);
         $cpf = htmlspecialchars($_POST['cpf']);
-        $usuario = htmlspecialchars($_POST['usuario']);
-        $senha = $_POST['senha'];
         $telefone = htmlspecialchars($_POST['telefone']);
-        $email = htmlspecialchars($_POST['email']);
+        $email = htmlspecialchars($_POST['email']);        
+        $senha = $_POST['senha'];
+        $usuario = htmlspecialchars($_POST['usuario']);
 
         try {
             // Verificação se o CPF já é cadastrado
@@ -22,6 +22,20 @@
                 exit;
             }
 
+            /* Geralmente é comum verificar se o telefone e o email já estão cadastrados, mas não foi solicitado.. 
+            Deixei comentado aqui para vermos como vamos fazer 
+
+            // Verificação se o telefone já é cadastrado por outro usuário
+            $sqlTelefone = "SELECT id_usu FROM Usuario WHERE telefone = '$telefone'";
+            $stmtTelefone = $conn->query($sqlTelefone);
+            if ($stmtTelefone->fetch(PDO::FETCH_ASSOC)) {
+                echo "<script>
+                        alert('Número de telefone já cadastrado!');
+                        window.location.href = '../cadastro.php';
+                      </script>";
+                exit;
+            }
+                
             // Verificação se o E-mail já é cadastrado
             $sqlEmail = "SELECT id_usu FROM Usuario WHERE email = '$email'";
             $stmtEmail = $conn->query($sqlEmail);
@@ -33,12 +47,14 @@
                 exit;
             }
 
+            **** Final do comentário */
+
             // Verificação se o Nome de Usuário já é cadastrado
             $sqlUsuario = "SELECT id_usu FROM Usuario WHERE usuario = '$usuario'";
             $stmtUsuario = $conn->query($sqlUsuario);
             if ($stmtUsuario->fetch(PDO::FETCH_ASSOC)) {
                 echo "<script>
-                        alert('Nome de usuário já em uso! Selecione outro.');
+                        alert('Nome de usuário já cadastrado! Selecione outro.');
                         window.location.href = '../cadastro.php';
                       </script>";
                 exit;

@@ -84,7 +84,7 @@ function validarEdicao() {
 
     let telefone = document.getElementById("telefone").value.replace(/\D/g,""); // remove caracteres não numéricos
     if(telefone.length != 11) {
-        alert("Por favor, digite um número celular válido com o DDD.");
+        alert("Por favor, digite um número de celular válido com o DDD.");
         return false;
     }
 
