@@ -1,31 +1,57 @@
-<?php
-session_start();
+<?php require 'banco/verificaSessao.php'; ?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack a Cato - Histórico</title>
+    <link rel="icon" href="img/Gato_Usu_RS.png">
+    <link rel="stylesheet" href="css/basico.css">
+    <link rel="stylesheet" href="css/telahistorico.css">
+</head>
 
-$id_usu = 1; // substituir por $_SESSION['id_usu'] depois
+<body>
 
-$host = 'localhost';
-$user = 'root';
-$senha = '';
-$dbname = 'whackacato';
+    <header>
+        <hr>
+    </header>
 
-try {
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $senha);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    <section class="historico-card" aria-labelledby="titulo-historico">
 
-    $sql = "SELECT p.id_partida, p.dim_tabuleiro, p.modalidade, p.pontuacao, 
-                   p.nivel, p.data, u.usuario
-            FROM partida p
-            JOIN usuario u ON u.id_usu = p.id_usu
-            WHERE p.id_usu = $id_usu
-            ORDER BY p.data DESC";
+        <div class="historico-esquerda">
 
-    $resultado = $conn->query($sql);
-    $partidas = $resultado->fetchAll(PDO::FETCH_ASSOC);
+            <div class="historico-titulo">
+                <a href="telaprincipal.php">
+                    <img src="img/Botão_Voltar_Verde_RS.png" alt="Voltar ao menu" class="icone-voltar">
+                </a>
+                <h1 id="titulo-historico">Histórico</h1>
+                <img src="img/Patinha_RS.png" alt="" class="icone-pata">
+            </div>
 
-    header('Content-Type: application/json; charset=utf-8');
-    echo json_encode($partidas);
+            <div class="historico-dados">
+                <h2 id="det-usuario">Selecione uma partida</h2>
+                <dl>
+                    <div class="dado-linha"><dt>Tabuleiro:</dt><dd id="det-tabuleiro">-</dd></div>
+                    <div class="dado-linha"><dt>Modalidade:</dt><dd id="det-modalidade">-</dd></div>
+                    <div class="dado-linha"><dt>Pontuação:</dt><dd id="det-pontuacao">-</dd></div>
+                    <div class="dado-linha"><dt>Nível atingido:</dt><dd id="det-nivel">-</dd></div>
+                    <div class="dado-linha"><dt>Data:</dt><dd id="det-data">-</dd></div>
+                </dl>        
+            </div>
+        </div>
 
-} catch (PDOException $e) {
-    echo "Ocorreu um erro: " . $e->getMessage();
-}
-?>
+        <div class="historico-direita">
+            <ul class="lista-partidas" id="lista-partidas">
+            </ul>
+        </div>
+
+    </section>
+
+    <footer>
+        <hr>
+    </footer>
+
+    <script src="js/historico.js"></script>
+    
+</body>
+</html>

@@ -1,3 +1,4 @@
+<?php require 'banco/verificaSessao.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -52,7 +53,7 @@
             </div>
         </div>
         <div class="modal-botoes">
-            <form action="salvarpartida.php" method="POST" style="margin: 0;">
+            <form action="banco/salvarpartida.php" method="POST" style="margin: 0;">
                 <input type="hidden" name="dim_tabuleiro" id="ganhar-input-dimensao" value="">
                 <input type="hidden" name="modalidade" id="ganhar-input-modalidade" value="">
                 <input type="hidden" name="nivel" id="ganhar-input-nivel" value="">
@@ -93,7 +94,7 @@
                 </div>
             </div>
         </div>
-        <form action="salvarpartida.php" method="POST">
+        <form action="banco/salvarpartida.php" method="POST">
             <input type="hidden" name="dim_tabuleiro" id="perder-input-dimensao" value="">
             <input type="hidden" name="modalidade" id="perder-input-modalidade" value="">
             <input type="hidden" name="nivel" id="perder-input-nivel" value="">

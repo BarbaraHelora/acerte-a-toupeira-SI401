@@ -1,5 +1,3 @@
-<?php include 'banco/logout.php'; ?>
-
 <!DOCTYPE html>
     <html lang="pt">
         <head> 

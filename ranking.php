@@ -1,3 +1,4 @@
+<?php require 'banco/verificaSessao.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +11,11 @@
     <title>Whack a Cato - Ranking</title>
 </head>
 <?php
-    require_once 'conexao.php';
+    require_once 'banco/conexao.php';
 
     $stmt = $conn->prepare(
         "SELECT p.dim_tabuleiro, p.modalidade, p.pontuacao,
-                    p.nivel, u.username
+                    p.nivel, u.usuario
             FROM partida p
             INNER JOIN usuario u ON u.id_usu = p.id_usu
             ORDER BY p.pontuacao DESC
@@ -32,7 +33,7 @@
     <section class="tela-meio">
         <div class="tela-header">
             <div class="botao-voltar">
-                <a href="telaprincipal.html">
+                <a href="telaprincipal.php">
                     <img src="img/Botão_Voltar_Verde_RS.png" alt="botao-voltar">
                 </a>
             </div>
@@ -67,7 +68,7 @@
                     <div class="card">
                         <?php
                         echo "<h3 class='posicao'>" . $cont . "°</h3>";
-                        echo "<h3 class='usuario'>" . $usuario['username'] . "</h3>";
+                        echo "<h3 class='usuario'>" . $usuario['usuario'] . "</h3>";
                         ?>
                     </div>
                     <div class="especificacoes">

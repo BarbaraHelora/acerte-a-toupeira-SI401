@@ -1,3 +1,4 @@
+<?php require 'banco/verificaSessao.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -12,7 +13,7 @@
         <header>
             <hr>
             <div class="menu-geral">
-                <a href="login.html">
+                <a href="banco/logout.php">
                     <img id="botao-generico" src="img/Botão_Sair_RS.png" alt="botao-voltar">
                 </a>
 
@@ -30,9 +31,9 @@
         <div class="meio">
             <div class="menu">
                 <h1> Menu </h1>
-                <a class="botao" href="edicao.html"> Editar Perfil </a>
-                <a class="botao" href="telahistorico.html"> Histórico </a>
-                <a class="botao" href="ranking.html"> Ranking </a>
+                <a class="botao" href="edicao.php"> Editar Perfil </a>
+                <a class="botao" href="historico.php"> Histórico </a>
+                <a class="botao" href="ranking.php"> Ranking </a>
             </div>
 
             <div class="linha-vertical"></div>
@@ -80,11 +81,11 @@
                     <div class="opcoes-linha">
                         <h1>Modalidade</h1>
                         <div class="opcoes-modalidade">
-                            <input type="radio" class="checkbox" id="md-classico" name="modalidade" value="classico" checked>
+                            <input type="radio" class="checkbox" id="md-classico" name="modalidade" value="Classico" checked>
                             <label for="md-classico"> Clássica </label>
                             <img src="img/Gato_Configurações_RS.png" alt="imagem-decorativa-gato">
 
-                            <input type="radio" class="checkbox" id="md-explosivo" name="modalidade" value="explosivo">
+                            <input type="radio" class="checkbox" id="md-explosivo" name="modalidade" value="Explosivo">
                             <label for="md-explosivo"> Explosiva </label>
                             <img src="img/Bomba_RS.png" alt="imagem-decorativa-bomba">
                         </div>
@@ -96,7 +97,7 @@
                         <script src="js/preview.js"></script>
                     </div>
                     <div class="opcoes-linha">
-                        <a href="jogo.html" id="btn-iniciar-jogo"> <!--O id aqui é para o js identificar qual modal vai ser aberto, não tem a ver com o css-->
+                        <a href="jogo.php" id="btn-iniciar-jogo"> <!--O id aqui é para o js identificar qual modal vai ser aberto, não tem a ver com o css-->
                             <img src="img/Botão_Jogar_Teste.png" alt="botao-jogar">
                         </a>
                     </div>
