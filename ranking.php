@@ -10,7 +10,7 @@
     <title>Whack a Cato - Ranking</title>
 </head>
 <?php
-    require_once 'conexao.php';
+    require_once './banco/conexao.php';
 
     $stmt = $conn->prepare(
         "SELECT p.dim_tabuleiro, p.modalidade, p.pontuacao,

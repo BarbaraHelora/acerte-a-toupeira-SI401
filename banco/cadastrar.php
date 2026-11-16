@@ -3,7 +3,7 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $nome = htmlspecialchars($_POST['nome']);
-        $dataNascimento = htmlspecialchars($_POST['dataNascimento']);
+        $dataNascimento = htmlspecialchars($_POST['data_nascimento']);
         $cpf = htmlspecialchars($_POST['cpf']);
         $telefone = htmlspecialchars($_POST['telefone']);
         $email = htmlspecialchars($_POST['email']);        
@@ -50,7 +50,7 @@
             **** Final do comentário */
 
             // Verificação se o Nome de Usuário já é cadastrado
-            $sqlUsuario = "SELECT id_usu FROM Usuario WHERE usuario = '$usuario'";
+            $sqlUsuario = "SELECT id_usu FROM Usuario WHERE username = '$usuario'";
             $stmtUsuario = $conn->query($sqlUsuario);
             if ($stmtUsuario->fetch(PDO::FETCH_ASSOC)) {
                 echo "<script>
@@ -61,7 +61,7 @@
             }
 
             // Após verificações, inserção do novo usuário no banco de dados
-            $sqlInsert = "INSERT INTO Usuario (nome, dataNascimento, cpf, telefone, email, senha, usuario) 
+            $sqlInsert = "INSERT INTO Usuario (nome, data_nascimento, cpf, telefone, email, senha, username) 
                           VALUES ('$nome', '$dataNascimento', '$cpf', '$telefone', '$email', '$senha', '$usuario')";
             
             $conn->exec($sqlInsert);
