@@ -16,7 +16,7 @@ function validarCadastro() {
         alert("Por favor, digite um CPF válido.");
         return false;
     }
-    
+
     // == Verifica se o nome de usuário tem pelo menos 3 caracteres, sem espaços no início ou no final
     let usuario = document.getElementById("usuario").value.trim();
     if (usuario.length < 3) {
@@ -28,9 +28,9 @@ function validarCadastro() {
     let senha = document.getElementById("senha").value;
     let temNumero = /[0-9]/.test(senha);
     let temEspecial = /[!@#$%^&*(),.?":{}|<>]/.test(senha);
-    
-    if (senha.length < 6 || !temNumero || !temEspecial) { 
-        alert("Por segurança, a senha deve conter no mínimo 6 caracteres, pelo menos um número e um caractere especial.");   
+
+    if (senha.length < 6 || !temNumero || !temEspecial) {
+        alert("Por segurança, a senha deve conter no mínimo 6 caracteres, pelo menos um número e um caractere especial.");
         return false;
     }
 
@@ -62,16 +62,11 @@ function validarEdicao() {
     let senha = document.getElementById("senha").value;
 
     if (senha != "") { // caso o usuário quiser mudar de senha, digita na label 
-        if (senha.length < 6) { 
-            alert("Por segurança, a senha deve conter no mínimo 6 caracteres.");   
-            return false;
-        }
-
         let temNumero = /[0-9]/.test(senha);
         let temEspecial = /[!@#$%^&*(),.?":{}|<>]/.test(senha);
 
-        if (!temNumero || !temEspecial) {
-            alert("Por segurança, a senha deve conter pelo menos um número e um caractere especial.");
+        if (senha.length < 6 || !temNumero || !temEspecial) {
+            alert("Por segurança, a senha deve conter no mínimo 6 caracteres, pelo menos um número e um caractere especial.");
             return false;
         }
     }
@@ -129,7 +124,6 @@ if(campoCpf) {
         valor = valor.replace(/(\d{3})(\d)/, "$1.$2"); 
         valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
         valor = valor.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-        
         campoCpf.value = valor; 
     });
 }
@@ -139,10 +133,8 @@ const campoTelefone = document.getElementById("telefone");
 if (campoTelefone) {
     campoTelefone.addEventListener("input", function() {
         let valor = campoTelefone.value.replace(/\D/g, "");  // remoção de caracteres não numéricos
-        
         valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2"); // insere parênteses em volta dos 2 primeiros dígitos (DDD)
         valor = valor.replace(/(\d)(\d{4})$/, "$1-$2"); // insere traço antes dos últimos 4 dígitos
-        
         campoTelefone.value = valor;
     });
 }

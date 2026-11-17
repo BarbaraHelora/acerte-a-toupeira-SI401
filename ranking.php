@@ -1,17 +1,4 @@
-<?php require 'banco/verificaSessao.php'; ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/Gato_Usu_RS.png">
-    <link rel="stylesheet" href="css/basico.css">
-    <link rel="stylesheet" href="css/ranking.css">
-    <title>Whack a Cato - Ranking</title>
-</head>
-<?php
-require_once './banco/conexao.php';
+<?php require 'banco/verificaSessao.php';
 
 $stmt = $conn->prepare(
     "SELECT p.dim_tabuleiro, p.modalidade, p.pontuacao,
@@ -24,6 +11,19 @@ $stmt = $conn->prepare(
 $stmt->execute();
 $lista_usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/Gato_Usu_RS.png">
+    <link rel="stylesheet" href="css/basico.css">
+    <link rel="stylesheet" href="css/ranking.css">
+    <title>Whack a Cato - Ranking</title>
+</head>
+
 
 <body>
     <header>
@@ -80,8 +80,6 @@ $lista_usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo "</div>";
         echo "</div>";
         ?>
-        </div>
-        </div>
     </section>
 
     <footer>

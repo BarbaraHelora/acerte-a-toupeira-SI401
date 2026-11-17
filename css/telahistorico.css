@@ -1,5 +1,3 @@
-/*Tela de histórico*/
-
 /*cores usadas só nesta página*/
 body {
   --sombra-oliva: #756B2F;
@@ -7,11 +5,9 @@ body {
 }
 
 * {
-    * {
-        margin: 0;
-        border: 0;
-        padding: 0;
-    }
+  margin: 0;
+  border: 0;
+  padding: 0;
 }
 
 /*detalhes gerais da página.*/

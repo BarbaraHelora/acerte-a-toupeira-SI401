@@ -141,7 +141,7 @@ header h1{
     color: var(--black-bean);
     background-color: var(--moss);
     border: 0.4vw solid var(--black-bean);
-    border-radius: 30px; /*a unidade aqui não está resposiva*/
+    border-radius: 30px; 
     margin-bottom: 1vw;
     box-shadow: 0px 4px 4px 0px var(--toasted-caramel-shadow);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -164,7 +164,7 @@ header h1{
     height: 50vh;
     align-self: center;
     background-color: var(--black-bean);
-    border-radius: 20px; /*a unidade aqui não está resposiva*/
+    border-radius: 20px; 
 }
 
 .conteudo{

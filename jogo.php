@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="modal-botoes">
-            <form action="banco/salvarpartida.php" method="POST" style="margin: 0;">
+            <form action="banco/salvarpartida.php" method="POST">
                 <input type="hidden" name="dim_tabuleiro" id="ganhar-input-dimensao" value="">
                 <input type="hidden" name="modalidade" id="ganhar-input-modalidade" value="">
                 <input type="hidden" name="nivel" id="ganhar-input-nivel" value="">

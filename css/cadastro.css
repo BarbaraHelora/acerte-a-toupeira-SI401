@@ -18,8 +18,8 @@ body {
 
 .meio {
     position: relative;
-    display: flex;              /* não parece estar fazendo efeito mais o display aqui */
-    flex-direction: column;     /* pq acho que passou tudo pro forms, não sei se é a melhor prática */
+    display: flex;              
+    flex-direction: column;     
     align-items: center;
     width: 60vw;
     max-height: 80vh;
@@ -182,7 +182,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     box-shadow: 0 8px 12px var(--fresh-butter-shadow);
 }
 
-.botao-cadastrar:active { /* faz diferença? */
+.botao-cadastrar:active { 
     transform: translateY(2px);
     box-shadow: 0px 1px 2px var(--fresh-butter-shadow); 
 }

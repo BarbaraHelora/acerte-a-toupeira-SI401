@@ -22,7 +22,7 @@ body {
     max-height: fit-content;    
     background-color: var(--fresh-butter);
     border: 0.3vw solid var(--moss);
-    border-radius: 20px; /*a unidade aqui não está resposiva*/
+    border-radius: 20px; 
     padding: 2vw 0.5vw;
 }
 
@@ -102,7 +102,7 @@ input {
     box-shadow: 0 8px 12px var(--fresh-butter-shadow);
 }
 
-.botao-login:active { /* faz diferença? */
+.botao-login:active {
     transform: translateY(2px);
     box-shadow: 0px 1px 2px var(--fresh-butter-shadow); 
 }
