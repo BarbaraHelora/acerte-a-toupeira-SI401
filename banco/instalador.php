@@ -56,12 +56,12 @@ try {
         $conn->exec($sqlSeedUsuarios);
 
         $sqlSeedPartidas = "INSERT INTO Partida (dim_tabuleiro, modalidade, pontuacao, nivel, data, id_usu) VALUES
-            ('4x4', 'Explosivo', 5000, 50, '2026-11-10', 1),
-            ('3x3', 'Clássico', 1200, 12, '2026-11-12', 1),
-            ('4x4', 'Clássico', 4550, 40, '2026-11-13', 2),
-            ('3x3', 'Clássico', 3337, 32, '2026-11-14', 3),
-            ('4x4', 'Explosivo', 3150, 30, '2026-11-15', 4),
-            ('2x2', 'Clássico', 2400, 19, '2026-11-16', 5)";
+            ('4x4', 'Explosivo', 65, 2, '2026-11-10', 1),
+            ('3x3', 'Clássico', 650, 10, '2026-11-12', 1),
+            ('4x4', 'Clássico', 350, 5, '2026-11-13', 2),
+            ('3x3', 'Clássico', 140, 2, '2026-11-14', 3),
+            ('4x4', 'Explosivo', 225, 6, '2026-11-15', 4),
+            ('2x2', 'Clássico', 580, 8, '2026-11-16', 5)";
         $conn->exec($sqlSeedPartidas);
 
         echo "Dados iniciais inseridos com sucesso!!";
