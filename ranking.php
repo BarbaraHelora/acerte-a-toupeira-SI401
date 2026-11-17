@@ -1,3 +1,4 @@
+<?php require 'banco/verificaSessao.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +33,7 @@ $lista_usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <section class="tela-meio">
         <div class="tela-header">
             <div class="botao-voltar">
-                <a href="telaprincipal.html">
+                <a href="telaprincipal.php">
                     <img src="img/Botão_Voltar_Verde_RS.png" alt="botao-voltar">
                 </a>
             </div>

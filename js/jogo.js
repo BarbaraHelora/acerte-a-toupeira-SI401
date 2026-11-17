@@ -243,17 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    if (btnDesistir) {
-        btnDesistir.addEventListener('click', (evento) => {
-            evento.preventDefault();
-            encerrarNivel();
-            if (modalPerder) {
-                modalPerder.showModal();
-                audio_gameover.currentTime = 0;
-                audio_gameover.play();
-            }
-        });
-    }
 
     function encerrarNivel() {
         jogoRodando = false;

@@ -1,3 +1,4 @@
+<?php require 'banco/verificaSessao.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -12,7 +13,7 @@
         <header>
             <hr>
             <div class="menu-geral">
-                <a href="login.php">
+                <a href="banco/logout.php">
                     <img id="botao-generico" src="img/Botão_Sair_RS.png" alt="botao-voltar">
                 </a>
 
@@ -31,7 +32,7 @@
             <div class="menu">
                 <h1> Menu </h1>
                 <a class="botao" href="edicao.php"> Editar Perfil </a>
-                <a class="botao" href="telahistorico.html"> Histórico </a>
+                <a class="botao" href="historico.php"> Histórico </a>
                 <a class="botao" href="ranking.php"> Ranking </a>
             </div>
 
@@ -96,7 +97,7 @@
                         <script src="js/preview.js"></script>
                     </div>
                     <div class="opcoes-linha">
-                        <a href="jogo.html" id="btn-iniciar-jogo"> <!--O id aqui é para o js identificar qual modal vai ser aberto, não tem a ver com o css-->
+                        <a href="jogo.php" id="btn-iniciar-jogo"> <!--O id aqui é para o js identificar qual modal vai ser aberto, não tem a ver com o css-->
                             <img src="img/Botão_Jogar_Teste.png" alt="botao-jogar">
                         </a>
                     </div>

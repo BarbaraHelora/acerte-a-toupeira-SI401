@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const lista = document.getElementById('lista-partidas');
     
     function formatarData(dataSql) {
-        // Aceita "2026-11-14 15:30:00" (DATETIME) ou "2026-11-14" (DATE)
-        const [dia, hora = '00:00:00'] = dataSql.split(' ');
-        const [a, m, d] = dia.split('-');
-        return `${d}/${m}/${a} ${hora.slice(0, 5)}`;
-    }
+    if (!dataSql) return '--/--/----';
+    const [dia] = dataSql.split(' ');
+    const [a, m, d] = dia.split('-');
+    return `${d}/${m}/${a}`;
+}
     
     function mostrarDetalhes(p) {
         document.getElementById('det-usuario').innerText = p.usuario;
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('det-data').innerText = formatarData(p.data);
     }
 
-    fetch('historico.php')
+    fetch('banco/historico.php')
         .then(resp => resp.json())
         .then(partidas => {
             if (partidas.length === 0) {
