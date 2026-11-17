@@ -243,6 +243,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
+    if (btnDesistir) {
+        btnDesistir.addEventListener('click', (evento) => {
+            evento.preventDefault();
+            audio_gameover.currentTime = 0;
+            audio_gameover.play();
+
+            // Para o jogo e limpa o tabuleiro
+            jogoRodando = false;
+            clearInterval(temporizadorJogo);
+            clearInterval(gerarObjetos);
+
+            for (let l = 0; l < linhas; l++) {
+                for (let c = 0; c < colunas; c++) {
+                    tabuleiro[l][c].tipo = "vazio";
+                }
+            }
+
+            // Preenche e abre APENAS o modal de perder
+            preencherModalPerder();
+            if (modalPerder && !modalPerder.open) {
+                modalPerder.showModal();
+            }
+        });
+    }
 
     function encerrarNivel() {
         jogoRodando = false;

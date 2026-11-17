@@ -60,7 +60,7 @@
 
             echo "<script>
                     alert('Perfil atualizado com sucesso!');
-                    window.location.href = '../telaprincipal.html';
+                    window.location.href = '../telaprincipal.php';
                   </script>";
             exit;
 

@@ -23,7 +23,7 @@
             </header>
 
             <div class="meio">
-                <a class="botao-voltar" href="telaprincipal.html">
+                <a class="botao-voltar" href="telaprincipal.php">
                     <img src="img/Botão_Voltar_Marrom_RS.png" alt="Voltar">
                 </a>
 

@@ -14,7 +14,7 @@
                 $_SESSION['id_usu'] = $row['id_usu'];
                 $_SESSION['usuario'] = $row['username'];
 
-                header("Location: ../telaprincipal.html");
+                header("Location: ../telaprincipal.php");
                 exit;
             } else {
                 echo "<script>
