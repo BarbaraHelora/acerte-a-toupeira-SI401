@@ -9,21 +9,6 @@
         $senha = $_POST['senha'];
 
         try {
-        
-        /* Idem ao cadastrar.php, não sei se vamos considerar telefone e emaill cadastrados por outros usuarios para não permitir duplicidade de dados.
-        Não foi algo solicitado no enunciado do trabalho, but ..
-
-            // Verificação se o telefone já é cadastrado por outro usuário
-            $sqlTelefone = "SELECT id_usu FROM Usuario WHERE telefone = '$telefone' AND id_usu != '$id_usu'";
-            $stmt = $conn->query($sqlTelefone);
-            if ($stmt->fetch(PDO::FETCH_ASSOC)) {
-                echo "<script>
-                        alert('Número de telefone já cadastrado!');
-                        window.location.href = '../edicao.php';
-                      </script>";
-                exit;
-            }    
-
             // Verificação se o email já é cadastrado por outro usuário
             $sqlEmail = "SELECT id_usu FROM Usuario WHERE email = '$email' AND id_usu != '$id_usu'";
             $stmt = $conn->query($sqlEmail);
@@ -34,8 +19,6 @@
                       </script>";
                 exit;
             }
-
-            ****Final do comentário */
 
             // Atualização dos dados do usuário no banco de dados
             if(!empty($senha)) { 

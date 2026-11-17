@@ -6,13 +6,13 @@
         $senha = $_POST['senha'];
 
         try {
-            $sql = "SELECT * FROM Usuario WHERE username = '$usuario'";
+            $sql = "SELECT * FROM Usuario WHERE usuario = '$usuario'";
             $stmt = $conn->query($sql);
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($row && $row['senha'] === $senha) {
                 $_SESSION['id_usu'] = $row['id_usu'];
-                $_SESSION['usuario'] = $row['username'];
+                $_SESSION['usuario'] = $row['usuario'];
 
                 header("Location: ../telaprincipal.php");
                 exit;

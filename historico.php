@@ -1,4 +1,5 @@
 <?php require 'banco/verificaSessao.php'; ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

@@ -3,7 +3,7 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $nome = htmlspecialchars($_POST['nome']);
-        $dataNascimento = htmlspecialchars($_POST['data_nascimento']);
+        $dataNascimento = htmlspecialchars($_POST['dataNascimento']);
         $cpf = htmlspecialchars($_POST['cpf']);
         $telefone = htmlspecialchars($_POST['telefone']);
         $email = htmlspecialchars($_POST['email']);        
@@ -22,20 +22,6 @@
                 exit;
             }
 
-            /* Geralmente é comum verificar se o telefone e o email já estão cadastrados, mas não foi solicitado.. 
-            Deixei comentado aqui para vermos como vamos fazer 
-
-            // Verificação se o telefone já é cadastrado por outro usuário
-            $sqlTelefone = "SELECT id_usu FROM Usuario WHERE telefone = '$telefone'";
-            $stmtTelefone = $conn->query($sqlTelefone);
-            if ($stmtTelefone->fetch(PDO::FETCH_ASSOC)) {
-                echo "<script>
-                        alert('Número de telefone já cadastrado!');
-                        window.location.href = '../cadastro.php';
-                      </script>";
-                exit;
-            }
-                
             // Verificação se o E-mail já é cadastrado
             $sqlEmail = "SELECT id_usu FROM Usuario WHERE email = '$email'";
             $stmtEmail = $conn->query($sqlEmail);
@@ -47,10 +33,8 @@
                 exit;
             }
 
-            **** Final do comentário */
-
             // Verificação se o Nome de Usuário já é cadastrado
-            $sqlUsuario = "SELECT id_usu FROM Usuario WHERE username = '$usuario'";
+            $sqlUsuario = "SELECT id_usu FROM Usuario WHERE usuario = '$usuario'";
             $stmtUsuario = $conn->query($sqlUsuario);
             if ($stmtUsuario->fetch(PDO::FETCH_ASSOC)) {
                 echo "<script>
@@ -61,7 +45,7 @@
             }
 
             // Após verificações, inserção do novo usuário no banco de dados
-            $sqlInsert = "INSERT INTO Usuario (nome, data_nascimento, cpf, telefone, email, senha, username) 
+            $sqlInsert = "INSERT INTO Usuario (nome, dataNascimento, cpf, telefone, email, senha, usuario) 
                           VALUES ('$nome', '$dataNascimento', '$cpf', '$telefone', '$email', '$senha', '$usuario')";
             
             $conn->exec($sqlInsert);

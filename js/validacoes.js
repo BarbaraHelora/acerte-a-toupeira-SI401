@@ -26,16 +26,11 @@ function validarCadastro() {
 
     // == Verifica se a senha tem pelo menos 6 caracteres, com um número e caractere especial
     let senha = document.getElementById("senha").value;
-    if (senha.length < 6) { 
-        alert("Por segurança, a senha deve conter no mínimo 6 caracteres.");   
-        return false;
-    }
-
     let temNumero = /[0-9]/.test(senha);
     let temEspecial = /[!@#$%^&*(),.?":{}|<>]/.test(senha);
-
-    if (!temNumero || !temEspecial) {
-        alert("Por segurança, a senha deve conter pelo menos um número e um caractere especial.");
+    
+    if (senha.length < 6 && !temNumero && !temEspecial) { 
+        alert("Por segurança, a senha deve conter no mínimo 6 caracteres, pelo menos um número e um caractere especial.");   
         return false;
     }
 
@@ -57,7 +52,6 @@ function validarCadastro() {
 }
 
 function validarEdicao() {
-    // Ainda não há o back-end para recuperar o banco de dados, mas a ideia é que não possa ficar vazio 
     let nome = document.getElementById("nome").value.trim();
     if (nome.length < 3) {
         alert("Por favor, digite um nome completo válido.");

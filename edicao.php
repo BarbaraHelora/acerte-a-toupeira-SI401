@@ -7,7 +7,7 @@
 ?>
 
 <!DOCTYPE html>
-    <html lang="pt">
+    <html lang="pt-br">
         <head>
             <title>Whack a Cato - Edição</title>
             <link rel="icon" href="img/Gato_Usu_RS.png">
