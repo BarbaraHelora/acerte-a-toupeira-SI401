@@ -115,16 +115,13 @@ header hr {
 }
 
 .cards {
-    background-color: var(--linha);
-    border-radius: 15px;
-    border: 0.4vw solid var(--evergreen);
-    padding: 0.5vw;
     display: flex;
+    flex-direction: column;
+    gap: 2vh;
     width: 55vw;
 }
 
 .cards .especificacoes {
-    font-size: 2.1vw;
     justify-content: right;
     gap: 3vw;
     width: 47vw;
@@ -134,10 +131,12 @@ header hr {
 
 .especificacoes .tabuleiro {
     width: 4vw;
+    margin-right: 0.7vw;
 }
 
 .especificacoes .modalidade {
     width: 8vw;
+    margin-right: 1vw;
 }
 
 .especificacoes .pontuacao {
@@ -146,44 +145,49 @@ header hr {
 
 .especificacoes .nivel {
     width: 6vw;
+    margin-right: -2vw;
 }
 
 .cards .card {
     display: flex;
     gap: 1.5vw;
+    background-color: var(--linha);
+    border-radius: 15px;
+    border: 0.4vw solid var(--evergreen);
+    font-size: 2.5vw;
+    padding: 0.5vw;
 }
 
 .card h3 {
     display: inline;
-    font-size: 2vw;
+    width: 4vw;
+    gap: 4vw;
 }
 
 .card .posicao {
     margin-left: 1vw;
     font-family: Gorditas, cursive;
     color: var(--black-bean);
-    font-size: 2.5vw;
 }
 
 .card .usuario {
     color: var(--evergreen);
     font-family: Sunshiney, cursive;
     font-weight: 300;
-    font-size: 2.5vw;
+    width: 6vw;
 }
 
 .especificacoes h3 {
     color: var(--fresh-butter);
     font-family: Sunshiney, cursive;
     font-weight: 300;
-    width: 6vw;
 }
 
 footer {
     display: flex;
     align-items: flex-start;
     width: 100vw;
-    height: 3vh;
+    height: 3.2vh;
     padding: 1vw 0 1vw 0;
     background-color: var(--fresh-butter);
 }
@@ -200,7 +204,7 @@ footer hr {
 
 .cards-ranking::-webkit-scrollbar-track {
     background: transparent;
-    margin: 1vw; 
+    margin: 1vw;
 }
 
 .cards-ranking::-webkit-scrollbar-thumb {

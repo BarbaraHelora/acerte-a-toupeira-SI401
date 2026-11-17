@@ -10,18 +10,18 @@
     <title>Whack a Cato - Ranking</title>
 </head>
 <?php
-    require_once './banco/conexao.php';
+require_once './banco/conexao.php';
 
-    $stmt = $conn->prepare(
-        "SELECT p.dim_tabuleiro, p.modalidade, p.pontuacao,
+$stmt = $conn->prepare(
+    "SELECT p.dim_tabuleiro, p.modalidade, p.pontuacao,
                     p.nivel, u.username
             FROM partida p
             INNER JOIN usuario u ON u.id_usu = p.id_usu
             ORDER BY p.pontuacao DESC
             LIMIT 5"
-    );
-    $stmt->execute();
-    $lista_usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+);
+$stmt->execute();
+$lista_usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <body>
@@ -58,31 +58,27 @@
             <h2>Pontuação</h2>
             <h2>Nível</h2>
         </div>
-        <div class="cards-ranking">
-            <div class="cards">
-                <?php
-                $cont = 1;
-                foreach ($lista_usuarios as $usuario) {
-                    ?>
-                    <div class="card">
-                        <?php
-                        echo "<h3 class='posicao'>" . $cont . "°</h3>";
-                        echo "<h3 class='usuario'>" . $usuario['username'] . "</h3>";
-                        ?>
-                    </div>
-                    <div class="especificacoes">
-                        <?php
-                        echo "<h3 class='tabuleiro'>" . $usuario['dim_tabuleiro'] . "</h3>";
-                        echo "<h3 class='modalidade'>" . $usuario['modalidade'] . "</h3>";
-                        echo "<h3 class='pontuacao'>" . $usuario['pontuacao'] . "</h3>";
-                        echo "<h3 class='nivel'>" . $usuario['nivel'] . "</h3>";
-                        $cont++;
-                        ?>
-                    </div>
-                    <?php
-                }
-                ?>
-            </div>
+        <?php
+        echo "<div class='cards-ranking'>";
+        echo "<div class='cards'>";
+        $cont = 1;
+        foreach ($lista_usuarios as $usuario) {
+            echo "<div class='card'>";
+            echo "<h3 class='posicao'>" . $cont . "°</h3>";
+            echo "<h3 class='usuario'>" . $usuario['username'] . "</h3>";
+            echo "<div class='especificacoes'>";
+            echo "<h3 class='tabuleiro'>" . $usuario['dim_tabuleiro'] . "</h3>";
+            echo "<h3 class='modalidade'>" . $usuario['modalidade'] . "</h3>";
+            echo "<h3 class='pontuacao'>" . $usuario['pontuacao'] . "</h3>";
+            echo "<h3 class='nivel'>" . $usuario['nivel'] . "</h3>";
+            $cont++;
+            echo "</div>";
+            echo "</div>";
+        }
+
+        echo "</div>";
+        echo "</div>";
+        ?>
         </div>
         </div>
     </section>
