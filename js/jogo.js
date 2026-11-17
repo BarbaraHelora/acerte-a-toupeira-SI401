@@ -64,6 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const passoY = 44; //distancia vertical entre as caixas
     const deslocamentoImparX = 42; // as fileiras impares tem um deslocamento horizontal
 
+    //audios do jogo
+    const audio_levelup = new Audio("audio/vadim_makes_sound-retro-arcade-level-up-552982.mp3");
+    const audio_gameover = new Audio("audio/make_more_sound-8-bit-video-game-lose-sound-version-1-145828.mp3");
+    const audio_meow = new Audio("audio/sound_garage-cat-meow-8-fx-306184.mp3");
+    const audio_bomb = new Audio("audio/yarzur_ofc-sfx34-stomp-534302.mp3");
+
     let tabuleiro = [];
 
     function inicializarTabuleiro() {
@@ -109,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ctx.drawImage(imgCaixaComGato, caixa.x, caixa.y, spriteWidth, spriteHeight);
                     }
                 }
-                else if(caixa.tipo === "bomba") {
+                else if (caixa.tipo === "bomba") {
                     if (imgCaixaComBomba.complete) {
                         ctx.drawImage(imgCaixaComBomba, caixa.x, caixa.y, spriteWidth, spriteHeight);
                     }
@@ -170,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function iniciarGeradorObjetos() {
-        const modalidade = sessionStorage.getItem("modalidade") || "classico"; //pega a modalidade do setItem de modais.js
+        const modalidade = sessionStorage.getItem("modalidade") || "Clássico"; //pega a modalidade do setItem de modais.js
 
         function geraBomba() {
             let lSorteada = Math.floor(Math.random() * linhas);
@@ -211,16 +217,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        function sortearObjetos() {
+            if (Math.random() < 0.5) {
+                geraGato();
+            }
+            else {
+                geraBomba();
+            }
+        }
+
         gerarObjetos = setInterval(() => {
             if (!jogoRodando) {
                 return;
             }
 
-            if (modalidade === "explosivo") {
-                geraBomba();
+            else if (modalidade === "Clássico") {
+                geraGato();
             }
 
-            geraGato();
+            else if (modalidade === "Explosivo") {
+                sortearObjetos();
+            }
             desenharJogo();
         }, 3000); // intervalo entre as tentativas de exibição dos elementos    
 
@@ -232,6 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
             encerrarNivel();
             if (modalPerder) {
                 modalPerder.showModal();
+                audio_gameover.currentTime = 0;
+                audio_gameover.play();
             }
         });
     }
@@ -262,12 +281,16 @@ document.addEventListener('DOMContentLoaded', () => {
             preencherModalGanhar();
             if (modalGanhar) {
                 modalGanhar.showModal();
+                audio_levelup.currentTime = 0;
+                audio_levelup.play();
             }
         } else {
             // perdeu :(
             preencherModalPerder();
             if (modalPerder) {
                 modalPerder.showModal();
+                audio_gameover.currentTime = 0;
+                audio_gameover.play();
             }
         }
         console.log(`Tempo Visibilidade (Nível ${nivelAtual}): ${tempoVisibilidadeGato} ms`);
@@ -287,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (elPontProx) { elPontProx.innerText = metaEstimada; }
 
         document.getElementById('ganhar-input-dimensao').value = `${linhas}x${colunas}`;
-        document.getElementById('ganhar-input-modalidade').value = sessionStorage.getItem("modalidade") || "classico";
+        document.getElementById('ganhar-input-modalidade').value = sessionStorage.getItem("modalidade") || "Clássico";
         document.getElementById('ganhar-input-nivel').value = nivelAtual;
         document.getElementById('ganhar-input-pontuacao').value = pontuacaoAcumulada;
     }
@@ -303,8 +326,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (elGatosAcertados) { elGatosAcertados.innerText = totalGatosAcertadosAcumulado + acertosNivel; }
         if (elPontAcul) { elPontAcul.innerText = pontuacaoAcumulada + pontuacaoNivel; }
 
-        document.getElementById('perder-input-dimensao').value =`${linhas}x${colunas}`;
-        document.getElementById('perder-input-modalidade').value = sessionStorage.getItem("modalidade") || "classico";
+        document.getElementById('perder-input-dimensao').value = `${linhas}x${colunas}`;
+        document.getElementById('perder-input-modalidade').value = sessionStorage.getItem("modalidade") || "Clássico";
         document.getElementById('perder-input-nivel').value = nivelAtual;
         document.getElementById('perder-input-pontuacao').value = pontuacaoAcumulada + pontuacaoNivel;
     }
@@ -363,6 +386,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 ) {
                     if (caixa.tipo === "gato") {
                         // Acertou o gato!
+                        audio_meow.currentTime = 0;
+                        audio_meow.play();
                         acertosNivel++;
                         pontuacaoNivel += 10;
                         if (score) score.innerText = pontuacaoNivel;
@@ -374,6 +399,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     if (caixa.tipo === "bomba") {
                         // Acertou a bomba :(
+                        audio_bomb.currentTime = 0;
+                        audio_bomb.play();
                         pontuacaoNivel -= 5;
                         if (score) score.innerText = pontuacaoNivel;
 

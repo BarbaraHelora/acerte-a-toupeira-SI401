@@ -13,13 +13,13 @@ try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $senha);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $dim_tabuleiro = $_POST['dim_tabuleiro'];
-        $modalidade = $_POST['modalidade'];
-        $nivel = $_POST['nivel'];
-        $pontuacao = $_POST['pontuacao'];
-        $destino = $_POST['destino'];
+    $dim_tabuleiro = $_POST['dim_tabuleiro'];
+    $modalidade = $_POST['modalidade'];
+    $nivel = $_POST['nivel'];
+    $pontuacao = $_POST['pontuacao'];
+    $destino = $_POST['destino'];
 
-        $sql = "INSERT INTO partida (id_usu, dim_tabuleiro, modalidade, nivel, pontuacao, data) VALUES (
+    $sql = "INSERT INTO partida (id_usu, dim_tabuleiro, modalidade, nivel, pontuacao, data) VALUES (
                     $id_usu,
                     '$dim_tabuleiro',
                     '$modalidade',
@@ -28,15 +28,15 @@ try {
                     CURDATE()
                 )";
 
-        $conn->exec($sql);
+    $conn->exec($sql);
 
-        if ($destino == "denovo") {
-            header("Location: jogo.html");
-        } else {
-            header("Location: telaprincipal.html");
-        }
-        exit;
-   
+    if ($destino == "denovo") {
+        header("Location: jogo.html");
+    } else {
+        header("Location: telaprincipal.html");
+    }
+    exit;
+
 } catch (PDOException $e) {
     echo "Ocorreu um erro: " . $e->getMessage();
 }

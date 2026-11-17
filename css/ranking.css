@@ -131,12 +131,12 @@ header hr {
 
 .especificacoes .tabuleiro {
     width: 4vw;
-    margin-right: 0.7vw;
+    margin-right: 0.3vw;
 }
 
 .especificacoes .modalidade {
     width: 8vw;
-    margin-right: 1vw;
+    margin-right: 1.1vw;
 }
 
 .especificacoes .pontuacao {
@@ -154,7 +154,7 @@ header hr {
     background-color: var(--linha);
     border-radius: 15px;
     border: 0.4vw solid var(--evergreen);
-    font-size: 2.5vw;
+    font-size: 2.3vw;
     padding: 0.5vw;
 }
 
