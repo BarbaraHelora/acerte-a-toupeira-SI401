@@ -29,7 +29,7 @@ function validarCadastro() {
     let temNumero = /[0-9]/.test(senha);
     let temEspecial = /[!@#$%^&*(),.?":{}|<>]/.test(senha);
     
-    if (senha.length < 6 && !temNumero && !temEspecial) { 
+    if (senha.length < 6 || !temNumero || !temEspecial) { 
         alert("Por segurança, a senha deve conter no mínimo 6 caracteres, pelo menos um número e um caractere especial.");   
         return false;
     }

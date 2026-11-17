@@ -107,7 +107,7 @@ header hr {
     display: flex;
     gap: 1.5vw;
     flex-direction: column;
-    max-height: 17vw;
+    max-height: 28vh;
     overflow-y: auto;
     overflow-x: hidden;
     border-radius: 0.4vw;
