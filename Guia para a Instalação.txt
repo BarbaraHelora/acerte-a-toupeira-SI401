@@ -14,7 +14,7 @@ Olá, esse é um guia para instalar o nosso joguinho :)
 
 7. Enconte o arquivo instalador.php, e clique nele.
 
-8. O navegador deverá te informar que o banco e as tabelas foram criadas ("Banco de dados criado com sucesso!!Tabelas criadas com sucesso!!).
+8. O navegador deverá te informar que o banco e as tabelas foram criadas e dados iniciais foram inseridos com sucesso ("Banco de dados criado com sucesso!! Tabelas criadas com sucesso!! Dados iniciais inseridos com sucesso!!").
 
 
 Para ter certeza que tudo esta funcionando bem, siga os passos abaixo.
@@ -25,5 +25,5 @@ Para ter certeza que tudo esta funcionando bem, siga os passos abaixo.
 
 3. Acesse e verifique se as tabelas 'usuário' e 'partida' estão criadas.
 
-Tudo pronto!! Volte para 'http://localhost/whackacato' e clique em cadastro.php.
+Tudo pronto!! Volte para 'http://localhost/whackacato' e clique em login.php.
 Se tudo der certo, você ja pode se divertir!!

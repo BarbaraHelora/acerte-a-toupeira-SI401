@@ -42,7 +42,30 @@ try {
                             ON DELETE CASCADE;";
 
     $conn->exec($sql);
-    echo "Tabelas criadas com sucesso!!";
+    echo "Tabelas criadas com sucesso!! <br>";
+
+    // Verifica se já existem usuários para não duplicar caso o instalador seja rodado novamente
+    $stmt = $conn->query("SELECT COUNT(*) FROM Usuario");
+    if ($stmt->fetchColumn() == 0) {
+        $sqlSeedUsuarios = "INSERT INTO Usuario (nome, dataNascimento, cpf, telefone, email, senha, usuario) VALUES
+            ('Maria Silva', '2004-05-12', '529.982.247-25', '(19) 99123-4567', 'maria@email.com', 'Gato@123', 'Maria123'),
+            ('Ana Clara Souza', '2005-08-20', '111.444.777-35', '(19) 99234-5678', 'ana@email.com', 'Gato@123', 'AnaClara2'),
+            ('João Vitor Lima', '2003-11-03', '123.456.789-09', '(19) 99345-6789', 'joao@email.com', 'Gato@123', 'Joao_Vitor2'),
+            ('Melissa Costa', '2006-02-15', '390.533.447-05', '(19) 99456-7890', 'mel@email.com', 'Gato@123', 'Mel1515'),
+            ('Sarah Oliveira', '2004-09-28', '705.484.450-52', '(19) 99567-8901', 'sarah@email.com', 'Gato@123', 'S4r4h_')";
+        $conn->exec($sqlSeedUsuarios);
+
+        $sqlSeedPartidas = "INSERT INTO Partida (dim_tabuleiro, modalidade, pontuacao, nivel, data, id_usu) VALUES
+            ('4x4', 'Explosivo', 5000, 50, '2026-11-10', 1),
+            ('3x3', 'Clássico', 1200, 12, '2026-11-12', 1),
+            ('4x4', 'Clássico', 4550, 40, '2026-11-13', 2),
+            ('3x3', 'Clássico', 3337, 32, '2026-11-14', 3),
+            ('4x4', 'Explosivo', 3150, 30, '2026-11-15', 4),
+            ('2x2', 'Clássico', 2400, 19, '2026-11-16', 5)";
+        $conn->exec($sqlSeedPartidas);
+
+        echo "Dados iniciais inseridos com sucesso!!";
+    }
 
 } catch (PDOException $e) {
     echo "Erro ao criar tabelas: " . $e->getMessage();
