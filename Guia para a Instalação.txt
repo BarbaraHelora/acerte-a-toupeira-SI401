@@ -1,0 +1,29 @@
+Olá, esse é um guia para instalar o nosso joguinho :)
+
+1. Agora que você já tem os arquivos do jogo, precisa move-los para o htdocs do Xampp.
+
+2. Ligue o Apache e o MySql do Xampp (importante).
+
+3. Na painel de controle do Xampp, no menu da direita existe uma opção chamada Explorer, clique nela, ela irá abrir o caminho da aplicação do Explorador de Arquivos.
+
+4. Navegue para C:\xampp\htdocs e lá crie uma pasta com o nome whackacato.
+
+5. Passe todos os arquivos que foram engregues no zip para dentro dessa pasta, garanta que as pastas do jogo já se encontem ao acessar htdosc/whackacato.
+
+6. No navegador, pesquise -> 'http://localhost/whackacato' (pode copiar tb).
+
+7. Enconte o arquivo instalador.php, e clique nele.
+
+8. O navegador deverá te informar que o banco e as tabelas foram criadas ("Banco de dados criado com sucesso!!Tabelas criadas com sucesso!!).
+
+
+Para ter certeza que tudo esta funcionando bem, siga os passos abaixo.
+
+1. Acesse no painel do Xampp o MySql e clique em Admin, ele deverá abrir uma aba do navegador contendo o phpmyadmin.
+
+2. Confira no menu da esquerda se a base 'whackacato' existe.
+
+3. Acesse e verifique se as tabelas 'usuário' e 'partida' estão criadas.
+
+Tudo pronto!! Volte para 'http://localhost/whackacato' e clique em cadastro.php.
+Se tudo der certo, você ja pode se divertir!!
